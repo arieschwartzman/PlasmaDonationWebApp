@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/eef6c811-d049-4f18-b6a4-24e65f5e1d4e/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/plasmadonation-webapp",
+    "appService.deploySubpath": ""
+}

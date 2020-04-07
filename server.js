@@ -10,11 +10,11 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const randomstring = require("randomstring");
 const azure = require('azure-storage');
+const entGen = azure.TableUtilities.entityGenerator;
 
 const WEBCHAT_SECRET = process.env.WEBCHAT_SECRET;
 const DIRECTLINE_ENDPOINT_URI = process.env.DIRECTLINE_ENDPOINT_URI;
 const APP_SECRET = process.env.APP_SECRET;
-const STORAGE_CONNECTION_STRING= process.env.STORAGE_CONNECTION_STRING;
 
 const directLineTokenEp = `https://${DIRECTLINE_ENDPOINT_URI || "directline.botframework.com"}/v3/directline/tokens/generate`;
 
@@ -87,7 +87,7 @@ app.get('/health', function(req, res){
     }
 });
 
-const tableService = azure.createTableService(STORAGE_CONNECTION_STRING);
+const tableService = azure.createTableService();
 
 app.post('/save', function(req, res) {
    const key = randomstring.generate({
@@ -96,24 +96,26 @@ app.post('/save', function(req, res) {
    });
    
   var task = {
-    PartitionKey : {'_': 'donationrequest', '$':'Edm.String'},
-    RowKey: {'_': key, '$':'Edm.String'},
-    name: {'_': req.body.name, '$':'Edm.String'},
-    email: {'_': req.body.email,'$':'Edm.String'},
-    phone: {'_': req.body.phone, '$':'Edm.String'},
-    state: {'_': req.body.state ,'$':'Edm.String'},
-    city: {'_': req.body.city, '$':'Edm.String'},
-    gender:{'_': req.body.gender, '$':'Edm.String'},
-    donationcenter: {'_': req.body.center, '$':'Edm.String'},
-    age:{'_': req.body.age, '$':'Edm.String'},
-    tattoo:{'_': req.body.tattoo, '$':'Edm.String'},
-    medication:{'_': req.body.medication, '$':'Edm.String'},
-    surgery:{'_': req.body.surgery, '$':'Edm.String'},
-    weight:{'_': req.body.weight, '$':'Edm.String'},
-    zipcode:{'_': req.body.zipcode, '$':'Edm.String'}
+    PartitionKey: entGen.String('donationrequest'),
+    RowKey: entGen.String(key),
+    name: entGen.String(req.body.name),
+    email: entGen.String(req.body.email),
+    phone: entGen.String(req.body.phone),
+    state: entGen.String(req.body.state),
+    city: entGen.String(req.body.city),
+    gender: entGen.String(req.body.gender),
+    donationcenter: entGen.String(req.body.center),
+    age: entGen.Int32(req.body.age),
+    tattoo: entGen.Boolean(req.body.tattoo),
+    medication: entGen.Boolean(req.body.medication),
+    surgery: entGen.Boolean(req.body.surgery),
+    weight: entGen.Int32(req.body.weight),
+    zipcode: entGen.String(req.body.zipcode),
+    onsetDate: entGen.DateTime(req.body.onsetDate),
+    symptomFreeDate: entGen.DateTime(req.body.symptomFreeDate)
   };
   
-  tableService.insertEntity("donationrequests", task, function(err) {      
+  tableService.insertEntity("donationrequests", task, function(err, result, response) {      
     if (err) {
         res.status(500).send(err.message);
     }

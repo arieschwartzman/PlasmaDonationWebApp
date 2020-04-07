@@ -11,13 +11,23 @@ body {
   width: 100vw; height: 100vh;
 }
 
-#webchat {
-  position: absolute;
-  height: 700px;
-  width: 600px;
-  right: 0px;
-  bottom: 0px;
-  border: 1px solid gray;
+@media screen and (max-width: 600px) {
+  #webchat {
+    position: relative;
+    height: 100vh;
+    border: 1px solid gray;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  #webchat {
+    position: absolute;
+    height: 650px;
+    width: 500px;
+    right: 0px;
+    bottom: 0px;
+    border: 1px solid gray;
+  }
 }
 
 #webchat[watermark="true"] [role="complementary"] ul[role="list"]::after {
