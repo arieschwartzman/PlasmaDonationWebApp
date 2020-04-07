@@ -1,13 +1,23 @@
-html, body {
+html {
   height: 100%;
+  font-family: calibri;
+  background-image: url(../background.png);  background-repeat: no-repeat; background-size: cover; background-attachment: fixed;
 }
+
 body {
   margin: 0;
+  padding: 0; margin: 0;
+  background-color: rgba(255,255,255,0.5);
+  width: 100vw; height: 100vh;
 }
 
 #webchat {
-  height: 100%;
-  width: 100%;
+  position: absolute;
+  height: 700px;
+  width: 600px;
+  right: 0px;
+  bottom: 0px;
+  border: 1px solid gray;
 }
 
 #webchat[watermark="true"] [role="complementary"] ul[role="list"]::after {
@@ -31,3 +41,59 @@ body {
   right: unset;
   transform: translate(-50%, 0);
 }
+
+.grid-wrapper{
+  display: grid;
+  grid-template-columns: 720px;
+  grid-template-rows: 50px 810px;
+  grid-template-areas: "nav" "chat";
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+}
+
+.nav{
+  grid-area: nav;
+  margin-top: 40px
+}
+
+.ac-container select, .ac-container input[type="text"] {
+  padding: 5px;
+  border-radius: 0;
+  border: 1px solid lightgray;
+  border-radius:5px;
+  outline: none;
+}
+
+.ac-container select, .ac-container input[type="email"]  {
+  padding: 5px;
+  border-radius: 0;
+  border: 1px solid lightgray;
+  border-radius:5px;
+  outline: none;
+}
+
+.ac-container select, .ac-container input[type="tel"]  {
+  padding: 5px;
+  border-radius: 0;
+  border: 1px solid lightgray;
+  border-radius:5px;
+  outline: none;
+}
+
+
+.ac-container select {
+padding-left: 2px;
+}
+
+.ac-container select:focus, .ac-container input[type="text"]:focus {
+  background-color:white !important;
+  color: black;
+  outline: none;
+}
+
+.ac-container input, .ac-container select{font-family: "Segoe UI", sans-serif !important;}
