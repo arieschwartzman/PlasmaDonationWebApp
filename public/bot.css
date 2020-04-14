@@ -115,20 +115,20 @@ padding-left: 2px;
 
 
 
-button, .webchat__bubble__content > div {
+button.ac-pushButton, .webchat__bubble__content > div {
   border: 1px solid #25798b;
   border-radius: 3px;
   font-size: 14px;
 
 }
 
-button > div{
+button.ac-pushButton > div{
   font-weight: 500;
   text-transform: uppercase;
   color: #25798b;
 }
 
-button:hover {
+button.ac-pushButton:hover {
   background-color: #25798b !important;
 
 }

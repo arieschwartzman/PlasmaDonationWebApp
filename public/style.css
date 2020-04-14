@@ -11,6 +11,8 @@
     background-color: white;
     display: flex;
     justify-content: center;
+    z-index: 10;
+    border-bottom: 2px solid #AC2641;
 }
 
 .top-static-navbar .plasma-header {
@@ -50,7 +52,6 @@
 
 .top-context {
     background-color: #CBECEC;
-    border-top: 2px solid #AC2641;
     border-bottom: 2px solid #AC2641;
     padding: 30px 20px;
     top: 80px;
@@ -142,20 +143,79 @@
 .panel {
     background: white;
     position: fixed;
-    top: 0;
+    top: 80px;
     bottom: 0;
     right: 0;
-    width: 400px;
+    width: 600px;
     border-left: 4px solid #25798B;
-    box-shadow: 1px 3px 9px 4px grey;
+    box-shadow: 1px 9px 9px 4px #1e1e1e;
+    z-index: 11;
 }
 
 .panel .background {
   background: white;
   opacity: 0.5;
   position: fixed;
-  top: 0;
+  top: 80px;
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+  .main-content {
+
+    flex-direction: column;
+  }
+  .icons {
+    display: none;
+  }
+
+  .get-started {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    height: 80px;
+    text-align: center;
+    border-top: 2px solid #AC2641;
+    box-shadow: 2px -1px 4px 0px darkgrey;
+
+  }
+
+  .get-started button {
+    width: 80%;
+    margin: 20px 0;
+  }
+
+  .top-context {
+    position: relative
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .panel {
+    left: 0;
+    right: 0;
+    width: auto;
+    border: none;
+  }
+
+  .top-static-navbar {
+    box-shadow: 2px 1px 4px 2px darkgrey;
+  }
+
+  .top-static-navbar .plasma-header {
+    height: 60px;
+    padding: 10px 5px;
+  }
+
+  .navigation-parts > div{
+    font-size: 11px;
+    letter-spacing: -1px;
+    font-weight: 700;
+  }
 }
