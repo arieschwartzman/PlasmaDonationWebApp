@@ -25,6 +25,9 @@ app.use(bodyParser.json());
 // Indicate which directory static resources
 // (e.g. stylesheets) should be served from.
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "node_modules/bootstrap")));
+app.use(express.static(path.join(__dirname, "node_modules/jquery")));
+
 // begin listening for requests.
 const port = process.env.PORT || 8080;
 const region = process.env.REGION || "Unknown";
