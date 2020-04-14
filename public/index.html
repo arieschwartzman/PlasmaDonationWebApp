@@ -1,40 +1,361 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <!-- Add Azure Application Insights to your chat.
-        Uncomment the following code snippet and replace
-        <appInsightInstrumnetationKey> with your own
-        instrumentation key. For more info about
-        Application Insight and instumentation key:
-        https://docs.microsoft.com/en-us/azure/azure-monitor/app/create-new-resource#copy-the-instrumentation-key
-    -->
-    <!--
-    <script>
-        var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=window[sdkInstance],aisdk=window[aiName]||function(e){function n(e){t[e]=function(){var n=arguments;t.queue.push(function(){t[e].apply(t,n)})}}var t={config:e};t.initialize=!0;var i=document,a=window;setTimeout(function(){var n=i.createElement("script");n.src=e.url||"https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js",i.getElementsByTagName("script")[0].parentNode.appendChild(n)});try{t.cookie=i.cookie}catch(e){}t.queue=[],t.version=2;for(var r=["Event","PageView","Exception","Trace","DependencyData","Metric","PageViewPerformance"];r.length;)n("track"+r.pop());n("startTrackPage"),n("stopTrackPage");var s="Track"+r[0];if(n("start"+s),n("stop"+s),n("setAuthenticatedUserContext"),n("clearAuthenticatedUserContext"),n("flush"),!(!0===e.disableExceptionTracking||e.extensionConfig&&e.extensionConfig.ApplicationInsightsAnalytics&&!0===e.extensionConfig.ApplicationInsightsAnalytics.disableExceptionTracking)){n("_"+(r="onerror"));var o=a[r];a[r]=function(e,n,i,a,s){var c=o&&o(e,n,i,a,s);return!0!==c&&t["_"+r]({message:e,url:n,lineNumber:i,columnNumber:a,error:s}),c},e.autoExceptionInstrumented=!0}return t}(
-        {
-            instrumentationKey:"<appInsightInstrumnetationKey>"
-        }
-        );window[aiName]=aisdk,aisdk.queue&&0===aisdk.queue.length&&aisdk.trackPageView({});
-    </script>
-    -->
-    <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat-es5.gzip.js"></script>
-    <script src="index.js"></script>
-    <link href="stylesheets/style.css" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <script src="dist/jquery.min.js"></script>
 
-    <style> 
-        h1 {
-            font-weight: 300;
-            /*color: #e31937;*/
-            font-size: 40px;
-            margin-bottom: -15px;
-            background-color: #02a0c0;
-        }    
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat-es5.gzip.js"></script>
+    <title>CoVIg-19 PLASMA ALLIANCE</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/pnq1ezd.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+
+    <script src="index.js"></script>
+    <link href="bot.css" rel="stylesheet"/>
+
 </head>
 <body>
+<div class="top-static-navbar">
+    <div class="body-width-limited">
+        <div class="plasma-header">
+            <img src="images/Logo@3x.png">
+            <span>CoVIg-19 PLASMA ALLIANCE</span>
+        </div>
+        <div class="navigation-parts">
+            <div onclick="showRECRUITMENT()">RECRUITMENT</div>
+            <div onclick="showINFOGRAPHIC()">INFOGRAPHIC</div>
+            <div onclick="showABOUTDONATIN()">ABOUT DONATIN</div>
+            <div onclick="showQnA()">Q&A</div>
+            <div>SHARE</div>
+        </div>
+    </div>
+</div>
+<div class="main-content" id="RECRUITMENT">
+    <div class="top-context">
+        <div class="body-width-limited">
+            <div>
+                <p class="sup-title">You survived COVID-19</p>
+                <p class="main-title">YOU COULD HELP OTHERS DO THE SAME</p>
+                <p class="sub-title">Donate your plasma to help develop a potential treatment for COVID-19</p>
+            </div>
+        </div>
+    </div>
+    <div class="part-left">
+        <img class="icons" src="images/icons.png">
+        <p class="title">How You Can Help</p>
+        <p class="text">stopping the spread of coronavirus. They are looking to collect plasma at licensed plasma
+            donation centers across the US from healthy individuals who have recovered from COVID-19. Known as
+            convalescent plasma, the plasma of recovered COVID-19 patients contains critical antibodies that can be used
+            to make an experimental treatment.</p>
+        <p class="text">The sooner scientists receive so-called convalescent plasma donations, the sooner the Alliance
+            may be able to start manufacturing an investigational plasma-derived therapy and begin clinical trials.
+            These trials will determine if the investigational therapy could help high-risk COVID-19 patients recover
+            and whether it could protect high-risk individuals from the disease.</p>
+        <p class="text">If your doctor has confirmed that you have fully recovered from COVID-19 and are no longer
+            contagious, we encourage you to contact your nearest plasma donation center. You might be eligible to donate
+            plasma and help others recover from COVID-19.</p>
+        <p class="text">Providing your information does not obligate you to donate, and it does not guarantee that you
+            will be able to participate in the donor program. All candidates must provide valid identification and are
+            required to undergo a medical screening to ensure eligibility. Medical staff will be available to explain
+            the donation process and answer any questions you may have before you agree to donate. The Alliance takes
+            your privacy very seriously, and your information will be managed in accordance with all local, state, and
+            federal regulations.</p>
+        <p class="text">The new coronavirus is still spreading, and COVID-19 cases continue to increase worldwide. We
+            need survivors like you to help us develop potential treatments for those still at risk.</p>
+        <p class="text">Thank you for joining us in the fight against COVID-19. Finding a treatment starts with you.</p>
+    </div>
+    <div class="part-right">
+        <div class="get-started desktop">
+            <button onclick="showBot()">GET STARTED</button>
+        </div>
+        <p class="title">Your Plasma Is Needed Now</p>
+        <p class="text">If you have recovered from COVID-19 recently, your plasma may have the power to help others
+            through a potential treatment for the new coronavirus.</p>
+        <p class="text">By donating your plasma, a part of your blood that contains proteins and antibodies, you could
+            play a key role in helping scientists develop an investigational plasma-derived therapy for treating
+            high-risk COVID-19 patients that will be tested in clinical trials this summer. The results of these trials
+            will determine whether the new therapy has the potential to treat high-risk COVID-19 patients and prevent
+            pulmonary disease in people at increased risk of infection from the virus, including healthcare workers.</p>
+        <p class="text">The fight against COVID-19 starts with you. You’re a survivor. Now be a hero. Learn more here
+            about how you can be a part of this historic effort to treat the new coronavirus and stop the spread of the
+            pandemic.</p>
+
+    </div>
+</div>
+
+<div class="main-content" id="INFOGRAPHIC" style="display:none;">
+    <div class="top-context">
+        <div class="body-width-limited">
+            <div>
+                <p class="main-title-infographic">How Your Plasma Could Lead to a Potential Treatment for COVID-19</p>
+            </div>
+        </div>
+    </div>
+    <img class="infographic" src="images/path.png">
+</div>
+
+<div class="main-content" id="ABOUTDONATIN" style="display:none;">
+    <div class="top-context">
+        <div class="body-width-limited">
+            <div>
+                <p class="main-title-about">Understanding <span>Plasma Donation</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="part-main">
+        <p class="title">Donating plasma is a low-risk procedure with minimal or no side effects.</p>
+        <p class="key-steps">Here are the key steps:</p>
+        <ul>
+            <li>
+                <span>Registration</span>
+                <p>Prospective donors show identification, enter their contact info, and take a photo and fingerprint
+                    scan so they can be entered into the donation center’s electronic system. A medical historian also
+                    checks the prospective donor’s name in a national registry to make sure they are eligible to donate.
+                    All identification and medical information is confidential.</p>
+            </li>
+            <li>
+                <span>Screening</span>
+                <p>All donors must pass a pre-donation screening at every appointment. First-time donors are interviewed
+                    about their medical history. Typical questions include medications, allergies, medical conditions,
+                    and surgeries. First-time donors will also undergo a routine health exam. The goal of this screening
+                    is to make sure that the donation is safe for both the donor and the recipient of the final
+                    product.</p>
+            </li>
+            <li>
+                <span>Donation Area</span>
+                <p>Once donation eligibility has been confirmed, donors are led to the donation area. Here, they rest on
+                    recliners while connected to an automated machine, and are carefully monitored by staff throughout
+                    the donation process. Donors are welcome to relax, read, or use free Wi-Fi to watch their favorite
+                    shows.</p>
+            </li>
+            <li>
+                <span>Plasma Donation</span>
+                <p>The safe and sterile process for donating plasma is called plasmapheresis (“plaz-muh-fuh-REE-sis”).
+                    It is similar to donating blood, except that plasma is separated and collected while red and white
+                    blood cells are returned to the body.</p>
+                <div class="info-area">
+                    <div class="content">
+                        <div>
+                            <p class="title">What is Plasma?</p>
+                            <img src="images/plasma.png" class="plasma">
+                            <p class="text">Plasma is the pale yellow liquid portion of your blood, and it can be easily
+                                replaced by your body. It consists mainly of water and proteins, which help your body
+                                control bleeding and infection.</p>
+                        </div>
+                        <div>
+                            <p class="title">How is Plasma Used?</p>
+                            <p class="text">Plasma is processed into a wide variety of life-saving treatments that help
+                                thousands of people every day. These plasma-derived therapies are used to treat serious
+                                and rare diseases, including primary immunodeficiency and hemophilia. It is important to
+                                remember that human plasma cannot be made in a lab or by artificial methods. It only
+                                comes from healthy adults. Plasma donors help save lives and treat serious and rare
+                                diseases.</p>
+                        </div>
+                    </div>
+                </div>
+                <p>This process is automatically repeated until a target amount of plasma has been collected, which
+                    typically takes less than an hour.</p>
+            </li>
+            <li>
+                <span>Compensation</span>
+                <p>Donors receive compensation for their time in the form of a debit card. Donors who qualify for the
+                    COVID-19 program will receive $200 for each visit, up to a total of $400 for two donations completed
+                    within 14 days.</p>
+            </li>
+        </ul>
+        <p class="text">BioLife Plasma Services has three Washington donation centers: Bellingham, Lacey, and Pasco.
+            You can learn more about them, and ask questions about donor eligibility and other topics, by calling
+            <b>1-877-TAKEDA-7</b> (<a href="tel:1-877-825-3327">1-877-825-3327</a> ).</p>
+        <p class="text">To learn more about plasma-derived therapies and plasma donation, you can visit <a
+                href="DonatingPlasma.org" target="_blank">DonatingPlasma.org</a>
+            (sponsored by the Plasma Protein Therapeutics Association) or <a href="BioLifePlasma.com" target="_blank">BioLifePlasma.com</a>
+            (part of Takeda).</p>
+        <p class="text">Thank you for learning more about plasma donation!</p>
+    </div>
+</div>
+
+<div class="main-content" id="QnA" style="display:none;">
+    <div class="top-context">
+        <div class="body-width-limited">
+            <div>
+                <p class="main-title-about"><span>Questions & Answers</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="part-main qna">
+        <div class="question">
+            <p class="question">Where can I donate?</p>
+            <p class="text">There are hundreds of licensed collection centers across the US. Find your nearest
+                center by clicking on this link.</p>
+        </div>
+        <div class="question">
+            <p class="question">I have young children. Can I bring them with me?</p>
+            <p class="text">During the COVID-19 pandemic, to help prevent the spread of the virus, it is advised
+                that donors visit plasma centers without accompanying guests or children. This is for the health
+                and safety of you and your loved ones as well as other donors and plasma collection staff.</p>
+        </div>
+        <div class="question">
+            <p class="question">Is donating plasma safe?</p>
+            <p class="text"><b>Donating plasma is generally a safe and proven process.</b></p>
+            <p class="text">The tubing and all other equipment that comes in contact with your blood is
+                discarded and replaced with new, sterile materials each time a donation is made. Your blood
+                never enters the collection machine. We also use sterile techniques for drawing blood.</p>
+        </div>
+        <div class="question">
+            <p class="question">Does donating plasma hurt?</p>
+            <p class="text">If you can tolerate donating blood, or giving blood during medical
+                appointments, you should be able to tolerate plasma donation. Our highly trained professionals
+                take great care to minimize any possible discomfort.</p>
+        </div>
+        <div class="question">
+            <p class="question">Will I feel faint or weak afterwards?</p>
+            <p class="text">You shouldn’t. Unlike donating blood, which sometimes does make people feel
+                that way because they lose red blood cells, the plasma donation process returns both red and
+                white blood cells back to your body. Drinking plenty of water the day before and the day of your
+                donation will help you feel fine after your donation. That said, if you have a history of
+                feeling faint at the sight of blood, please let us know.</p>
+        </div>
+        <div class="question">
+            <p class="question">How many times will I need to donate?</p>
+            <p class="text">Individuals who are donating to help the Alliance initiative must donate
+                twice, in two separate appointments at least one day apart. As much as we appreciate your first
+                donation, it can only be used once you donate a second time. That’s because your second donation
+                allows us to repeat testing for specific infectious diseases. This ensures that the plasma is
+                safe to use.</p>
+        </div>
+        <div class="question">
+            <p class="question">Will my donated plasma go directly to a COVID-19 patient?</p>
+            <p class="text">No. Plasma collected from individual donors is pooled, processed, and
+                concentrated into a liquid that contains antibodies (part of the immune system). This
+                plasma-derived therapy must then be tested in clinical trials to determine if it is safe and
+                effective before it could be approved as a treatment.</p>
+        </div>
+        <div class="question">
+            <p class="question">Why aren’t you giving donated plasma directly to COVID-19 patients through
+                transfusions?</p>
+            <p class="text">Plasma from people who have recovered from COVID-19 – known as
+                “convalescent plasma” – contains antibodies that can help fight the virus. This plasma can be
+                used in two ways. One way is transfusing it directly to people who have active COVID-19. The
+                other is using the plasma to make a potential treatment called a polyclonal hyperimmune globulin
+                (H-IG), which concentrates the antibodies into a medicine.</p>
+            <p class="text">Both uses are important, and both have the potential to treat COVID-19. We welcome
+                all initiatives to address the pandemic, including vaccines and other treatments. The work of
+                The CoVIg-19 Plasma Alliance is focusing on developing an H-IG, which has properties that make
+                it a very promising candidate for a potential global treatment for COVID-19.</p>
+        </div>
+        <div class="question">
+            <p class="question">What are the benefits of H-IG?</p>
+            <p class="text">Because H-IG has a higher concentration of antibodies, it can be delivered in lower
+                volumes, and therefore would likely take less time to administer to patients than plasma itself.
+                H-IG also has a longer shelf life, which makes it easier to ship to patients around the world.
+                Both of these attributes also make H-IG much easier for hospitals to store and administer to
+                patients.</p>
+            <p class="text">The manufacturing process used to produce plasma-based therapies makes it
+                possible to set standards for antibody levels. This process, which includes numerous steps of
+                virus inactivation and removal, significantly reduces the risk of transmitting any kind of virus
+                (not just coronavirus) from donors to patients.</p>
+            <p class="text">Plasma-derived therapies, like H-IG, have already been shown to be effective in
+                treating severe viral respiratory infections. The work of the Alliance is determining whether
+                they may also be a potential option for treating high-risk COVID-19 patients and preventing
+                pulmonary disease in people at increased risk of infection from the virus, including healthcare
+                workers.</p>
+        </div>
+        <div class="question">
+            <p class="question">Is this part of the National Covid-19 Convalescent Plasma Project?</p>
+            <p class="text">No. Though you might have heard about that or similar efforts in recent weeks, or
+                even know someone who is participating in them, the CoVIg-19 Plasma Alliance is a separate
+                initiative led by the world’s leading plasma experts. A key difference is that we are not giving
+                plasma itself to COVID-19 patients, but instead using the plasma we collect to help develop a
+                potential therapy.</p>
+        </div>
+        <div class="question">
+            <p class="question">Do I need to tell my doctor or insurance company that I’m donating?</p>
+            <p class="text">Your doctor will need to provide written documentation that you have recovered from
+                COVID-19 and are no longer contagious. You shouldn’t need to inform your insurance provider, as
+                you will not be charged in any way for your donation.</p>
+        </div>
+        <div class="question">
+            <p class="question">Do I need to change my diet?</p>
+            <p class="text">In general, no. However, you should be well-nourished. Please eat a light but
+                healthy meal three hours before your donation. This means a meal that is high in protein (such
+                as eggs, fish, or nuts), rich in iron (such as tuna, lean red meat, nuts, or beans), and low in
+                fat (fatty or fried foods can interfere with laboratory testing). Since plasma is 90% water, you
+                should also be well-hydrated, so drink plenty of water, juice, or other fluids the day before
+                your donation. Please do not drink any alcohol the night before or the day of your donation.</p>
+        </div>
+        <div class="question">
+            <p class="question">Can I donate more than twice?</p>
+            <p class="text">You certainly may donate more than twice — so long as you’re eligible at each
+                donation. We encourage you to consider becoming a regular plasma donor to help save lives!
+                Plasma is used in a variety of therapies, including to help treat serious and rare diseases.</p>
+        </div>
+        <div class="question">
+            <p class="question">How else can I help fight COVID-19?</p>
+            <p class="text">If you know someone else who has recovered from COVID-19, please encourage them to
+                visit this website to learn more about the opportunity to donate their plasma as well!</p>
+        </div>
+    </div>
+</div>
+<div class="get-started mobile ">
+    <button onclick="showBot()">GET STARTED</button>
+</div>
+
+<div class="panel" style="display: none;">
+    <div class="background" onclick="hideBot()"></div>
     <div id="webchat" role="main" watermark="false"></div>
-    <script>chatRequested();</script>
-    
+</div>
+
+<script>
+    function showBot() {
+        chatRequested();
+        $('.panel').fadeIn();
+        $('body').css('overflow-y', 'hidden');
+    }
+
+    function hideBot() {
+        $('.panel').fadeOut();
+        $('body').css('overflow-y', 'scroll')
+    }
+
+    function showRECRUITMENT() {
+        hideBot();
+        $('.main-content').fadeOut(250);
+        setTimeout(function () {
+            $('#RECRUITMENT').fadeIn(250);
+        }, 300);
+    }
+
+    function showINFOGRAPHIC() {
+        hideBot();
+        $('.main-content').fadeOut(250);
+        setTimeout(function () {
+            $('#INFOGRAPHIC').fadeIn(250);
+        }, 300);
+    }
+
+    function showABOUTDONATIN() {
+        hideBot();
+        $('.main-content').fadeOut(250);
+        setTimeout(function () {
+            $('#ABOUTDONATIN').fadeIn(250);
+        }, 300);
+    }
+
+    function showQnA() {
+        hideBot();
+        $('.main-content').fadeOut(250);
+        setTimeout(function () {
+            $('#QnA').fadeIn(250);
+        }, 300);
+    }
+</script>
 </body>
 </html>

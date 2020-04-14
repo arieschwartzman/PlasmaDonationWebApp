@@ -83,12 +83,10 @@ function initBotConversation() {
         domain: domain
     });
     const styleOptions = {
-        botAvatarImage: '/corona2.png',
-        // botAvatarInitials: '',
-        // userAvatarImage: '',
-        hideSendBox: false, /* set to true to hide the send box from the view */
-        botAvatarInitials: 'Bot',
-        userAvatarInitials: 'You',
+        botAvatarImage: '/images/corona2.png',
+        hideSendBox: false,
+        botAvatarInitials: false,
+        userAvatarInitials: false,
         backgroundColor: '#F8F8F8'
     };
 

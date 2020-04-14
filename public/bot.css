@@ -1,7 +1,6 @@
 html {
   height: 100%;
   font-family: calibri;
-  background-image: url(../background.png);  background-repeat: no-repeat; background-size: cover; background-attachment: fixed;
 }
 
 body {
@@ -9,26 +8,15 @@ body {
   padding: 0; margin: 0;
   background-color: rgba(255,255,255,0.5);
   width: 100vw; height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
-@media screen and (max-width: 600px) {
   #webchat {
     position: relative;
-    height: 100vh;
+    height: 100%;
     border: 1px solid gray;
   }
-}
-
-@media screen and (min-width: 601px) {
-  #webchat {
-    position: absolute;
-    height: 650px;
-    width: 500px;
-    right: 0px;
-    bottom: 0px;
-    border: 1px solid gray;
-  }
-}
 
 #webchat[watermark="true"] [role="complementary"] ul[role="list"]::after {
   content: "Powered By ...";
@@ -73,7 +61,6 @@ body {
 
 .ac-container select, .ac-container input[type="text"] {
   padding: 5px;
-  border-radius: 0;
   border: 1px solid lightgray;
   border-radius:5px;
   outline: none;
@@ -81,7 +68,6 @@ body {
 
 .ac-container select, .ac-container input[type="email"]  {
   padding: 5px;
-  border-radius: 0;
   border: 1px solid lightgray;
   border-radius:5px;
   outline: none;
@@ -89,7 +75,6 @@ body {
 
 .ac-container select, .ac-container input[type="tel"]  {
   padding: 5px;
-  border-radius: 0;
   border: 1px solid lightgray;
   border-radius:5px;
   outline: none;
@@ -107,3 +92,27 @@ padding-left: 2px;
 }
 
 .ac-container input, .ac-container select{font-family: "Segoe UI", sans-serif !important;}
+
+
+
+button.ac-pushButton, .webchat__bubble__content > div {
+  border: 1px solid #25798b;
+  border-radius: 3px;
+  font-size: 14px;
+
+}
+
+button.ac-pushButton > div{
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #25798b;
+}
+
+button.ac-pushButton:hover {
+  background-color: #25798b !important;
+
+}
+
+button:hover > div {
+  color: white !important;
+}
