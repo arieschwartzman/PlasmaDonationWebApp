@@ -18,25 +18,6 @@ body {
     border: 1px solid gray;
   }
 
-/* @media screen and (max-width: 600px) {
-  #webchat {
-    position: relative;
-    height: 100vh;
-    border: 1px solid gray;
-  }
-}
-
-@media screen and (min-width: 601px) {
-  #webchat {
-    position: absolute;
-    height: 650px;
-    width: 500px;
-    right: 0px;
-    bottom: 0px;
-    border: 1px solid gray;
-  }
-} */
-
 #webchat[watermark="true"] [role="complementary"] ul[role="list"]::after {
   content: "Powered By ...";
   background: linear-gradient(rgba(248, 248, 248, 0), rgba(248, 248, 248, .63), #F8F8F8 40%);
@@ -80,7 +61,6 @@ body {
 
 .ac-container select, .ac-container input[type="text"] {
   padding: 5px;
-  border-radius: 0;
   border: 1px solid lightgray;
   border-radius:5px;
   outline: none;
@@ -88,7 +68,6 @@ body {
 
 .ac-container select, .ac-container input[type="email"]  {
   padding: 5px;
-  border-radius: 0;
   border: 1px solid lightgray;
   border-radius:5px;
   outline: none;
@@ -96,7 +75,6 @@ body {
 
 .ac-container select, .ac-container input[type="tel"]  {
   padding: 5px;
-  border-radius: 0;
   border: 1px solid lightgray;
   border-radius:5px;
   outline: none;
