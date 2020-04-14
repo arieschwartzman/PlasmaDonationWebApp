@@ -87,7 +87,7 @@ function initBotConversation() {
         hideSendBox: false,
         botAvatarInitials: false,
         userAvatarInitials: false,
-        backgroundColor: '#F8F8F8'
+        backgroundColor: '#f4f5f5'
     };
 
     const store = window.WebChat.createStore({}, function(store) { return function(next) { return function(action) {
@@ -143,4 +143,20 @@ function initBotConversation() {
 function startChat(user, webchatOptions) {
     const botContainer = document.getElementById('webchat');
     window.WebChat.renderWebChat(webchatOptions, botContainer);
+}
+
+
+var botRequested = false;
+function showBot() {
+    if (!botRequested) {
+        chatRequested();
+        botRequested = true;
+    }
+    $('.panel').addClass("in");
+    $('body').css('overflow-y', 'hidden');
+}
+
+function hideBot() {
+    $('.panel').removeClass("in");
+    $('body').css('overflow-y', 'scroll')
 }

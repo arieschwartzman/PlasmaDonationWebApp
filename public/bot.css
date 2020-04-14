@@ -1,118 +1,113 @@
-html {
-  height: 100%;
-  font-family: calibri;
-}
-
-body {
-  margin: 0;
-  padding: 0; margin: 0;
-  background-color: rgba(255,255,255,0.5);
-  width: 100vw; height: 100vh;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
-  #webchat {
-    position: relative;
-    height: 100%;
-    border: 1px solid gray;
-  }
 
 #webchat[watermark="true"] [role="complementary"] ul[role="list"]::after {
-  content: "Powered By ...";
-  background: linear-gradient(rgba(248, 248, 248, 0), rgba(248, 248, 248, .63), #F8F8F8 40%);
-  bottom: 0;
-  right: 0;
-  color: #707070;
-  display: block;
-  font-family: 'Segoe Semibold', Calibri, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 12px;
-  padding: 15px 10px 10px;
-  position: absolute;
-  position: sticky;
-  text-align: right;
+    content: "Powered By ...";
+    background: linear-gradient(rgba(248, 248, 248, 0), rgba(248, 248, 248, .63), #F8F8F8 40%);
+    bottom: 0;
+    right: 0;
+    color: #707070;
+    display: block;
+    font-family: 'Segoe Semibold', Calibri, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px;
+    padding: 15px 10px 10px;
+    position: absolute;
+    position: sticky;
+    text-align: right;
 }
 
 #webchat[watermark="true"] .webchat__scrollToEndButton {
-  bottom: 32px;
-  left: 50%;
-  right: unset;
-  transform: translate(-50%, 0);
+    bottom: 32px;
+    left: 50%;
+    right: unset;
+    transform: translate(-50%, 0);
 }
 
-.grid-wrapper{
-  display: grid;
-  grid-template-columns: 720px;
-  grid-template-rows: 50px 810px;
-  grid-template-areas: "nav" "chat";
-  justify-items: center;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  position: absolute;
-  right: 30px;
-  bottom: 20px;
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: 720px;
+    grid-template-rows: 50px 810px;
+    grid-template-areas: "nav" "chat";
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
 }
 
-.nav{
-  grid-area: nav;
-  margin-top: 40px
+.nav {
+    grid-area: nav;
+    margin-top: 40px
 }
 
 .ac-container select, .ac-container input[type="text"] {
-  padding: 5px;
-  border: 1px solid lightgray;
-  border-radius:5px;
-  outline: none;
+    padding: 5px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    outline: none;
 }
 
-.ac-container select, .ac-container input[type="email"]  {
-  padding: 5px;
-  border: 1px solid lightgray;
-  border-radius:5px;
-  outline: none;
+.ac-container select, .ac-container input[type="email"] {
+    padding: 5px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    outline: none;
 }
 
-.ac-container select, .ac-container input[type="tel"]  {
-  padding: 5px;
-  border: 1px solid lightgray;
-  border-radius:5px;
-  outline: none;
+.ac-container select, .ac-container input[type="tel"] {
+    padding: 5px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    outline: none;
 }
 
 
 .ac-container select {
-padding-left: 2px;
+    padding-left: 2px;
 }
 
 .ac-container select:focus, .ac-container input[type="text"]:focus {
-  background-color:white !important;
-  color: black;
-  outline: none;
+    background-color: white !important;
+    color: black;
+    outline: none;
 }
 
-.ac-container input, .ac-container select{font-family: "Segoe UI", sans-serif !important;}
+.ac-container input, .ac-container select {
+    font-family: "Segoe UI", sans-serif !important;
+}
+
+.bubble {
+    border: 1px solid #2b2e34 !important;
+    outline: none !important;
+    border-radius: 3px;
+}
 
 
-
-button.ac-pushButton, .webchat__bubble__content > div {
-  border: 1px solid #25798b;
-  border-radius: 3px;
-  font-size: 14px;
+button.ac-pushButton {
+    border: 1px solid #25798b !important;
+    border-radius: 3px;
+    font-size: 14px;
 
 }
 
-button.ac-pushButton > div{
-  font-weight: 500;
-  text-transform: uppercase;
-  color: #25798b;
+button.ac-pushButton > div {
+    font-family:din-condensed;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: black;
+    line-height: 28px;
+    font-size: 24px;
 }
 
+button.ac-pushButton {
+    background-color: #e7f8f9 !important;
+
+}
 button.ac-pushButton:hover {
-  background-color: #25798b !important;
+    background-color: #25798b !important;
 
 }
 
 button:hover > div {
-  color: white !important;
+    color: white !important;
 }
