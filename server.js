@@ -87,43 +87,43 @@ app.get('/health', function(req, res){
     }
 });
 
-const tableService = azure.createTableService();
+// const tableService = azure.createTableService();
 
-app.post('/save', function(req, res) {
-   const key = randomstring.generate({
-       length:7,       
-       charset:"numeric"             
-   });
+// app.post('/save', function(req, res) {
+//    const key = randomstring.generate({
+//        length:7,       
+//        charset:"numeric"             
+//    });
    
-  var task = {
-    PartitionKey: entGen.String('donationrequest'),
-    RowKey: entGen.String(key),
-    name: entGen.String(req.body.name),
-    email: entGen.String(req.body.email),
-    phone: entGen.String(req.body.phone),
-    state: entGen.String(req.body.state),
-    city: entGen.String(req.body.city),
-    gender: entGen.String(req.body.gender),
-    donationcenter: entGen.String(req.body.center),
-    age: entGen.Int32(req.body.age),
-    tattoo: entGen.Boolean(req.body.tattoo),
-    medication: entGen.Boolean(req.body.medication),
-    surgery: entGen.Boolean(req.body.surgery),
-    weight: entGen.Int32(req.body.weight),
-    zipcode: entGen.String(req.body.zipcode),
-    onsetDate: entGen.DateTime(req.body.onsetDate),
-    symptomFreeDate: entGen.DateTime(req.body.symptomFreeDate)
-  };
+//   var task = {
+//     PartitionKey: entGen.String('donationrequest'),
+//     RowKey: entGen.String(key),
+//     name: entGen.String(req.body.name),
+//     email: entGen.String(req.body.email),
+//     phone: entGen.String(req.body.phone),
+//     state: entGen.String(req.body.state),
+//     city: entGen.String(req.body.city),
+//     gender: entGen.String(req.body.gender),
+//     donationcenter: entGen.String(req.body.center),
+//     age: entGen.Int32(req.body.age),
+//     tattoo: entGen.Boolean(req.body.tattoo),
+//     medication: entGen.Boolean(req.body.medication),
+//     surgery: entGen.Boolean(req.body.surgery),
+//     weight: entGen.Int32(req.body.weight),
+//     zipcode: entGen.String(req.body.zipcode),
+//     onsetDate: entGen.DateTime(req.body.onsetDate),
+//     symptomFreeDate: entGen.DateTime(req.body.symptomFreeDate)
+//   };
   
-  tableService.insertEntity("donationrequests", task, function(err, result, response) {      
-    if (err) {
-        res.status(500).send(err.message);
-    }
-    else {        
-        res.status(200).send({key});         
-    }
-  });
-});
+//   tableService.insertEntity("donationrequests", task, function(err, result, response) {      
+//     if (err) {
+//         res.status(500).send(err.message);
+//     }
+//     else {        
+//         res.status(200).send({key});         
+//     }
+//   });
+// });
 
 
 app.post('/chatBot',  function(req, res) {
