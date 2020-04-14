@@ -19,6 +19,7 @@
     height: 60px;
     padding: 10px 30px;
 }
+
 .top-static-navbar .navigation-parts {
     height: 20px;
     display: flex;
@@ -26,6 +27,7 @@
     font-size: 12px;
     font-weight: 500;
 }
+
 .navigation-parts > div {
     flex-grow: 1;
     text-align: center;
@@ -33,21 +35,21 @@
 }
 
 .plasma-header img {
-   margin: 0 5px;
-   width: 40px;
-   height: 40px;
-   float:  left;
+    margin: 0 5px;
+    width: 40px;
+    height: 40px;
+    float: left;
 }
 
 .plasma-header span {
-   font-size: 22px;
-   line-height: 40px;
-   padding: 0px 0px 0px 0px;
-   letter-spacing: -1px;
-   font-weight: 700;
-   height: 40px;
-   display: inline-block;
-   float: left;
+    font-size: 22px;
+    line-height: 40px;
+    padding: 0px 0px 0px 0px;
+    letter-spacing: -1px;
+    font-weight: 700;
+    height: 40px;
+    display: inline-block;
+    float: left;
 }
 
 .top-context {
@@ -55,9 +57,12 @@
     border-bottom: 2px solid #AC2641;
     padding: 30px 20px;
     top: 80px;
-    position: sticky;
+    left: 0;
+    right: 0;
+    position: fixed;
     display: flex;
     justify-content: center;
+    z-index: 1;
 }
 
 .top-context div {
@@ -82,11 +87,56 @@
     margin: 14px 0 18px 0;
 }
 
+.top-context .main-title-infographic {
+    color: #AC2641;
+    font-size: 21px;
+    letter-spacing: 0px;
+    font-weight: 700;
+    line-height: 28px;
+    transform: scaleY(1.5);
+    margin: 14px 0 18px 0;
+}
+
+.top-context .main-title-about {
+    color: #000000;
+    font-size: 21px;
+    letter-spacing: 0px;
+    font-weight: 700;
+    line-height: 28px;
+    transform: scaleY(1.5);
+    margin: 14px 0 18px 0;
+}
+
+.top-context .main-title-about span {
+    color: #AC2641;
+
+}
+
 .top-context .sub-title {
     color: #25798B;
     font-size: 18px;
     font-weight: 700;
     line-height: 20px;
+}
+
+#RECRUITMENT.main-content {
+    padding: 110px 0 100px 0;
+    margin-top: 200px;
+}
+
+#INFOGRAPHIC.main-content {
+    padding: 50px 0 100px 0;
+    margin-top: 200px;
+}
+
+#ABOUTDONATIN.main-content {
+    padding: 20px 0 100px 0;
+    margin-top: 200px;
+}
+
+#QnA.main-content {
+    padding: 20px 0 100px 0;
+    margin-top: 200px;
 }
 
 .main-content {
@@ -106,14 +156,70 @@
 }
 
 .main-content .text {
-    font-size: 14px;
+    font-size: 16px;
     padding: 0 20px;
 }
 
+.main-content .key-steps {
+    font-size: 14px;
+    padding: 0 20px;
+    font-weight: 600;
+}
+
+li {
+    color: #AC2641;
+
+}
+
+p > a {
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.key-steps {
+    color: #AC2641;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+
+}
+
+li span {
+    color: black;
+    font-weight: 700;
+
+}
+
+li p {
+    color: black;
+}
 
 .icons {
     height: 40px;
     margin: 0 10px 20px
+}
+
+.main-content .part-main {
+    flex-basis: 700px;
+}
+
+.main-content .part-main.qna {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.question {
+    flex-basis: 50%;
+    padding: 10px 20px;
+}
+
+div.question p.question {
+    font-weight: 700;
+    color: #AC2641;
+}
+
+div.question p.text {
+    padding: 0;
 }
 
 .main-content .part-left {
@@ -123,6 +229,7 @@
 
 .main-content .part-right {
     width: 300px;
+    z-index: 0;
 }
 
 .get-started.desktop button {
@@ -149,24 +256,41 @@
     box-shadow: 0px 0px 25px 12px white;
 }
 
+.info-area {
+    background-color: #cbecec;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.info-area > div {
+    div: relative;
+}
+
+.info-area .plasma {
+    position: relative;
+    display: inline-block;
+    width: 130px;
+    top: 0;
+    right: 0;
+    float: right;
+}
+
+
+.info-area .title {
+    color: #AC2641;
+}
 
 .get-started.mobile button {
     border: none;
     height: 40px;
     line-height: 40px;
     width: 100%;
-     width: 80%;
+    width: 80%;
     margin: 20px 0;
     color: white;
     background-color: #AC2641;
     border-radius: 10px;
     box-shadow: 0px 1px 7px 0px grey;
-}
-
-
-
-
-.navigation-parts > div {
 }
 
 .panel {
@@ -182,62 +306,124 @@
 }
 
 .panel .background {
-  background: white;
-  opacity: 0.5;
-  position: fixed;
-  top: 80px;
-  left: 0;
-  right: 0;
-  bottom: 0;
+    background: white;
+    opacity: 0.5;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
-  .get-started.desktop {
+
+.get-started.desktop {
     display: block;
-  }
-  .get-started.mobile {
+}
+
+.get-started.mobile {
     display: none;
-  }
+}
 
-
+.infographic {
+    max-width: 650px;
+    margin: 0 10%;
+    width: 80%;
+}
 
 @media screen and (max-width: 760px) {
-  .main-content {
+    .main-content {
 
-    flex-direction: column;
-  }
-  .icons {
-    display: none;
-  }
-  .get-started.desktop {
-    display: none;
-  }
-  .get-started.mobile {
-    display: block;
-  }
-  .top-context {
-    position: relative
-  }
+        flex-direction: column;
+    }
+
+    .icons {
+        display: none;
+    }
+
+    .get-started.desktop {
+        display: none;
+    }
+
+    .get-started.mobile {
+        display: block;
+    }
+
+    .top-context {
+        position: relative;
+        height: auto;
+        top: 0;
+        margin-bottom: 20px;
+    }
+
+    #RECRUITMENT.main-content {
+
+
+        margin-top: 80px;
+
+        padding-top: 0;
+    }
+
+    #INFOGRAPHIC.main-content {
+
+
+        margin-top: 80px;
+
+        padding-top: 0;
+    }
+
+    #ABOUTDONATIN.main-content {
+
+        margin-top: 80px;
+
+        padding-top: 0;
+
+    }
+
+    #QnA.main-content {
+
+        margin-top: 80px;
+
+        padding-top: 0;
+
+    }
+
+    .main-content .part-right {
+        width: 90%;
+        margin: 5%;
+        padding: 0;
+    }
+
+    .info-area {
+        width: 90%;
+
+    }
+
+
+    div.question {
+        flex-basis: 100%;
+
+    }
 }
 
 @media screen and (max-width: 600px) {
-  .panel {
-    left: 0;
-    right: 0;
-    width: auto;
-    border: none;
-  }
+    .panel {
+        left: 0;
+        right: 0;
+        width: auto;
+        border: none;
+    }
 
-  .top-static-navbar {
-    box-shadow: 2px 1px 4px 2px darkgrey;
-  }
+    .top-static-navbar {
+        box-shadow: 2px 1px 4px 2px darkgrey;
+    }
 
-  .top-static-navbar .plasma-header {
-    height: 60px;
-    padding: 10px 5px;
-  }
+    .top-static-navbar .plasma-header {
+        height: 60px;
+        padding: 10px 5px;
+    }
 
-  .navigation-parts > div{
-    font-size: 11px;
-    letter-spacing: -1px;
-    font-weight: 700;
-  }
+    .navigation-parts > div {
+        font-size: 11px;
+        letter-spacing: -1px;
+        font-weight: 700;
+    }
 }
