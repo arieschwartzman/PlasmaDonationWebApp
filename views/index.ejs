@@ -133,9 +133,15 @@
                             <p><%- tabContents.info.intro[i].text %></p>
                         <% } %>
                     <% } %>
-                </article>
-                <img class="infographic" src="images/path.png">
-                <article>
+
+                    <% for (var i = 0; i < tabContents.info.steps.length; i++) { %>
+                        <div class="step-card">
+                            <img alt="" src="images/Circle image-<%=i%>.png">
+                            <h1><%=(i + 1)%>. <%- tabContents.info.steps[i].title %></h1>
+                            <p><%- tabContents.info.steps[i].text %></p>
+                        </div>
+                    <% } %>
+
                     <% for (var i = 0; i < tabContents.info.outro.length; i++) { %>
                         <% if (tabContents.info.outro[i].type === "headline") { %>
                             <h1><%- tabContents.info.outro[i].text %></h1>
@@ -169,9 +175,9 @@
                             <% } %>
                     </ol>
                     <div class="info-area">
+                        <img src="images/plasma.png" alt="" class="plasma">
                         <div>
                             <h1><%- tabContents.about.info[0].title %></h1>
-                            <img src="images/plasma.png" class="plasma">
                             <p><%- tabContents.about.info[0].text %></p>
                         </div>
                         <div>

@@ -3,7 +3,8 @@
     --covig_blue1: #e7f8f9;
     --covig_blue2: #4ecdc4;
     --covig_blue3: #25798b;
-    --covig_red1: #d02724;
+    --covig_blue4:#F6FFFF;
+    --covig_red1: #E6254C;
     --covig_red2: #ac2641;
     --covig_gray1: #d6d6d6;
     --covig_gray2: #505358;
@@ -80,11 +81,11 @@ body > nav select {
     height: 32px;
     width: 260px;
     font-size: 19px;
-    line-height: 22px;
+    line-height: unset;
     font-family: Nunito-sans;
     outline: none;
     border-color: var(--covig_blue2);
-    padding: 5px 16px;
+    padding: 0 16px;
     position: absolute;
     right: 30px;
     top: 0;
@@ -136,14 +137,16 @@ button#close-menu {
 body > nav > div > ul.nav-tabs > li.nav-item > a {
     text-align: center;
     cursor: pointer;
-    color: var(--covig_black1);
+    color: var(--covig_gray2);
     border: none;
-    border-bottom: 2px solid transparent;
+    border-bottom: 1px solid transparent;
     text-align: left;
-    font-family: din-condensed;
-    font-size: 19px;
-    font-weight: 200;
+    font-weight: lighter;
     padding: 0px 7px;
+    font-family: Nunito-Sans;
+    font-size: 19px;
+    letter-spacing: 0px;
+    line-height: 24px;
 }
 
 
@@ -152,12 +155,11 @@ body > nav > div > ul.nav-tabs.nav-tabs > li.nav-item > a:hover,
 body > nav > div > ul.nav-tabs.nav-tabs > li.nav-item > a.active {
     color: var(--covig_black1);
     text-decoration: none;
-    border-bottom: 2px solid var(--covig_red1);
+    border-bottom: 1px solid var(--covig_red1);
     display: inline-block;
     background: transparent;
     text-shadow: none;
     padding-bottom: 0;
-    font-family: din-condensed;
     font-size: 19px !important;
     font-weight: 200 !important;
 }
@@ -264,7 +266,7 @@ body > nav > div > ul.nav-tabs.nav-tabs > li.nav-item > a.active {
     font-weight: 600;
     font-size: 20px;
     line-height: 22px;
-    margin-bottom: 2pxpx;
+    margin-bottom: 2px;
     font-family: Nunito-Sans;
 }
 
@@ -310,26 +312,27 @@ body > nav > div > ul.nav-tabs.nav-tabs > li.nav-item > a.active {
 }
 
 .info-area {
-    background-color: var(--covig_blue1);
+    background-color: var(--covig_blue4);
     border-bottom: 1px solid var(--covig_blue2);
     border-top: 1px solid var(--covig_blue2);
-    padding: 20px;
+    padding: 38px 32px;
     margin-bottom: 20px;
+    position: relative;
 }
 
 .info-area > div {
     div: relative;
-    padding-bottom: 20px
+    padding-bottom: 20px;
+    width: 70%;
 }
 
 .info-area .plasma {
     position: relative;
     display: inline-block;
-    width: 130px;
+    width: 25%;
     top: 0;
     right: 0;
     float: right;
-    margin-left: 10px;
 }
 
 
@@ -337,7 +340,6 @@ body > nav > div > ul.nav-tabs.nav-tabs > li.nav-item > a.active {
     color: var(--covig_blue3);
     font-size: 18px;
     line-height: 18px;
-    margin-top: 30px;
     margin-bottom: 5px;
 }
 
@@ -397,10 +399,12 @@ body > nav > div > ul.nav-tabs.nav-tabs > li.nav-item > a.active {
     color: white;
     background-color: var(--covig_red1);
     border-radius: 10px;
-    box-shadow: 0px 1px 7px 0px grey;
     font-family: din-condensed;
     font-size: 22px;
     font-weight: 100;
+    repeat: padding-box;
+    box-shadow: 0px 2px 3px gray;
+    border-radius: 6px;
 }
 
 .get-started.mobile {
@@ -674,3 +678,34 @@ body > nav button img {
     }
 
 }
+
+
+div.step-card {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #B7B7B7;
+    border-radius: 6px;
+    opacity: 1;
+    margin: 6px 0;
+    position: relative;
+    padding-left: 152px;
+    padding-right: 44px;
+    padding-top: 22px;
+    min-height: 144px;
+}
+
+div.step-card img {
+    width: 88px;
+    height: 88px;
+    position: absolute;
+    top: 24px;
+    left: 32px;
+}
+
+
+div.step-card h1 {
+    text-align: left;
+    font: bold 18px Nunito-Sans;
+    letter-spacing: 0px;
+    color: #25798B;
+}
+

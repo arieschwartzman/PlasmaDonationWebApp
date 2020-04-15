@@ -40,14 +40,6 @@
     "recruitment": [
       {
         "type": "headline",
-        "text": "You survived COVID-19."
-      },
-      {
-        "type": "headline",
-        "text": "You could help others do the same."
-      },
-      {
-        "type": "subhead",
         "text": "How You Could Help"
       },
       {
@@ -84,6 +76,36 @@
         {
           "type": "text",
           "text": "When you donate your plasma, you become the essential first step in a journey to develop a potential treatment for COVID-19. Even though no one can predict the results of this clinical trial, here is a quick overview of the intended plan."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Plasma Donation",
+          "text": "Patients who have recovered from COVID-19 donate their plasma, which contains antibodies that help the immune system fight the new coronavirus. The proteins found in plasma are the most important ingredients in making a potential treatment."
+        },
+        {
+          "title": "Potential Treatment Made",
+          "text": "Plasma collected from individual patients is pooled, processed, and concentrated into a liquid that contains a high level of antibodies. This plasma-derived therapy then needs to be tested to determine if it is safe and effective."
+        },
+        {
+          "title": "Clinical Trials Begin",
+          "text": "Assuming sufficient plasma is collected, we are working to have the potential treatment in clinical trials and tested starting as early as June. The studies will look at whether it helps high-risk COVID-19 patients recover. Another study will explore if it helps protect individuals at high risk for contracting COVID-19, including health care workers."
+        },
+        {
+          "title": "Trial Results Analyzed",
+          "text": "Scientists will collect and carefully analyze all the data from the clinical trials to determine if the potential treatment is both safe and effective."
+        },
+        {
+          "title": "Potential Treatment Approved",
+          "text": "If the US Food and Drug Administration (FDA) determines that the potential treatment is both safe and effective, it could be approved for specific uses in the United States related to improving, and perhaps saving, those who suffer from COVID-19. The Alliance is also discussing potential use across the world with other national health authorities."
+        },
+        {
+          "title": "Manufacturing",
+          "text": "Assuming the potential treatment has been approved, the Alliance intends to manufacture the therapy on a larger scale and distribute it to hospitals and other healthcare settings and providers."
+        },
+        {
+          "title": "Potential Treatment Available",
+          "text": "The treatment will then be ready for use. The timing for this depends on many factors, but if the work of the Alliance is successful, the potential treatment could be available this year, making it one of the earliest potential treatments."
         }
       ],
       "outro": [
