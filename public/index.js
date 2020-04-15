@@ -160,3 +160,7 @@ function hideBot() {
     $('.panel').removeClass("in");
     $('body').css('overflow-y', 'scroll')
 }
+
+function toggleMenu() {
+    $('nav').toggleClass("in");
+}

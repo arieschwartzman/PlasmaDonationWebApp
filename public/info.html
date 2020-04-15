@@ -23,25 +23,27 @@
     <link href="bot.css" rel="stylesheet"/>
 </head>
 <body>
-<div class="top-static-navbar">
+<header>
     <div>
-        <div class="plasma-header">
-            <img src="images/Logo@3x.png">
-            <span>CoVIg-19 PLASMA ALLIANCE</span>
-        </div>
-        <div class="navigation-parts">
-            <a class="" href="/index.html" onclick="showRECRUITMENT()">RECRUITMENT</a>
-            <a class="in" href="#">INFOGRAPHIC</a>
-            <a class="" href="/about.html">ABOUT DONATING</a>
-            <a class="" href="/qna.html">Q&A</a>
-        </div>
+        <img alt="" src="images/Logo@3x.png">
+        <span>CoVIg-19 PLASMA ALLIANCE</span>
     </div>
-</div>
+</header>
+<button id="hamburger" onclick="toggleMenu()"><img alt="" src="images/hamburger.png"></button>
+<nav>
+    <button id="close-menu" onclick="toggleMenu()">X</button>
+    <div>
+        <a class="" href="/index.html" onclick="showRECRUITMENT()">RECRUITMENT</a>
+        <a class="in" href="/info.html">INFOGRAPHIC</a>
+        <a class="" href="/about.html">ABOUT DONATING</a>
+        <a class="" href="/qna.html">Q&A</a>
+    </div>
+</nav>
 <div class="top-context">
     <div>
-        <p class="sup-title"></p>
-        <p class="main-title">How Your Plasma Could Lead to a Potential Treatment for COVID-19</p>
-        <p class="sub-title"></p>
+        <h2></h2>
+        <h1>How Your Plasma Could Lead to a Potential Treatment for COVID-19</h1>
+        <h4></h4>
     </div>
 </div>
 <div class="main-content">
@@ -52,18 +54,19 @@
         <div class="get-started desktop">
             <button onclick="showBot()">GET STARTED</button>
         </div>
-        <p class="title">Your Plasma Is Needed Now</p>
-        <p class="text">If you have recovered from COVID-19 recently, your plasma may have the power to help others
-            through a potential treatment for the new coronavirus.</p>
-        <p class="text">By donating your plasma, a part of your blood that contains proteins and antibodies, you could
-            play a key role in helping scientists develop an investigational plasma-derived therapy for treating
-            high-risk COVID-19 patients that will be tested in clinical trials this summer. The results of these trials
-            will determine whether the new therapy has the potential to treat high-risk COVID-19 patients and prevent
-            pulmonary disease in people at increased risk of infection from the virus, including healthcare workers.</p>
-        <p class="text">The fight against COVID-19 starts with you. You’re a survivor. Now be a hero. Learn more here
-            about how you can be a part of this historic effort to treat the new coronavirus and stop the spread of the
-            pandemic.</p>
-
+        <article>
+            <h1>Your Plasma Is Needed Now</h1>
+            <p>If you have recovered from COVID-19 recently, your plasma may have the power to help others
+                through a potential treatment for the new coronavirus.</p>
+            <p>By donating your plasma, a part of your blood that contains proteins and antibodies, you could
+                play a key role in helping scientists develop an investigational plasma-derived therapy for treating
+                high-risk COVID-19 patients that will be tested in clinical trials this summer. The results of these trials
+                will determine whether the new therapy has the potential to treat high-risk COVID-19 patients and prevent
+                pulmonary disease in people at increased risk of infection from the virus, including healthcare workers.</p>
+            <p>The fight against COVID-19 starts with you. You’re a survivor. Now be a hero. Learn more here
+                about how you can be a part of this historic effort to treat the new coronavirus and stop the spread of the
+                pandemic.</p>
+        </article>
     </div>
 </div>
 

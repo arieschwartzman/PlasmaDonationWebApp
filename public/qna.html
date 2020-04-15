@@ -23,157 +23,160 @@
     <link href="bot.css" rel="stylesheet"/>
 </head>
 <body>
-<div class="top-static-navbar">
+<header>
     <div>
-        <div class="plasma-header">
-            <img src="images/Logo@3x.png">
-            <span>CoVIg-19 PLASMA ALLIANCE</span>
-        </div>
-        <div class="navigation-parts">
-            <a class="" href="/index.html" onclick="showRECRUITMENT()">RECRUITMENT</a>
-            <a class="" href="info.html">INFOGRAPHIC</a>
-            <a class="" href="/about.html">ABOUT DONATING</a>
-            <a class="in" href="#">Q&A</a>
-        </div>
+        <img alt="" src="images/Logo@3x.png">
+        <span>CoVIg-19 PLASMA ALLIANCE</span>
     </div>
-</div>
+</header>
+<button id="hamburger" onclick="toggleMenu()"><img alt="" src="images/hamburger.png"></button>
+<nav>
+    <button id="close-menu" onclick="toggleMenu()">X</button>
+    <div>
+        <a class="" href="/index.html" onclick="showRECRUITMENT()">RECRUITMENT</a>
+        <a class="" href="/info.html">INFOGRAPHIC</a>
+        <a class="" href="/about.html">ABOUT DONATING</a>
+        <a class="in" href="/qna.html">Q&A</a>
+    </div>
+</nav>
 <div class="top-context">
     <div>
-        <p class="sup-title"></p>
-        <p class="main-title"><span>Questions & Answers</span></p>
-        <p class="sub-title"></p>
+        <h2></h2>
+        <h1><span>Questions & Answers</span></h1>
+        <h4></h4>
     </div>
 </div>
 <div class="main-content">
     <div class="part-left">
-        <div class="question">
-            <p class="question">Where can I donate?</p>
-            <p class="text">There are hundreds of licensed collection centers across the US. Find your nearest
+        <article class="question">
+            <h1>Where can I donate?</h1>
+            <p>There are hundreds of licensed collection centers across the US. Find your nearest
                 center by clicking on this link.</p>
-        </div>
-        <div class="question">
-            <p class="question">I have young children. Can I bring them with me?</p>
-            <p class="text">During the COVID-19 pandemic, to help prevent the spread of the virus, it is advised
+        </article>
+        <article class="question">
+            <h1>I have young children. Can I bring them with me?</h1>
+            <p>During the COVID-19 pandemic, to help prevent the spread of the virus, it is advised
                 that donors visit plasma centers without accompanying guests or children. This is for the health
                 and safety of you and your loved ones as well as other donors and plasma collection staff.</p>
-        </div>
-        <div class="question">
-            <p class="question">Is donating plasma safe?</p>
-            <p class="text"><b>Donating plasma is generally a safe and proven process.</b></p>
-            <p class="text">The tubing and all other equipment that comes in contact with your blood is
+        </article>
+        <article class="question">
+            <h1>Is donating plasma safe?</h1>
+            <p><strong>Donating plasma is generally a safe and proven process.</strong></p>
+            <p>The tubing and all other equipment that comes in contact with your blood is
                 discarded and replaced with new, sterile materials each time a donation is made. Your blood
                 never enters the collection machine. We also use sterile techniques for drawing blood.</p>
-        </div>
-        <div class="question">
-            <p class="question">Does donating plasma hurt?</p>
-            <p class="text">If you can tolerate donating blood, or giving blood during medical
+        </article>
+        <article class="question">
+            <h1>Does donating plasma hurt?</h1>
+            <p>If you can tolerate donating blood, or giving blood during medical
                 appointments, you should be able to tolerate plasma donation. Our highly trained professionals
                 take great care to minimize any possible discomfort.</p>
-        </div>
-        <div class="question">
-            <p class="question">Will I feel faint or weak afterwards?</p>
-            <p class="text">You shouldn’t. Unlike donating blood, which sometimes does make people feel
+        </article>
+        <article class="question">
+            <h1>Will I feel faint or weak afterwards?</h1>
+            <p>You shouldn’t. Unlike donating blood, which sometimes does make people feel
                 that way because they lose red blood cells, the plasma donation process returns both red and
                 white blood cells back to your body. Drinking plenty of water the day before and the day of your
                 donation will help you feel fine after your donation. That said, if you have a history of
                 feeling faint at the sight of blood, please let us know.</p>
-        </div>
-        <div class="question">
-            <p class="question">How many times will I need to donate?</p>
-            <p class="text">Individuals who are donating to help the Alliance initiative must donate
+        </article>
+        <article class="question">
+            <h1>How many times will I need to donate?</h1>
+            <p>Individuals who are donating to help the Alliance initiative must donate
                 twice, in two separate appointments at least one day apart. As much as we appreciate your first
                 donation, it can only be used once you donate a second time. That’s because your second donation
                 allows us to repeat testing for specific infectious diseases. This ensures that the plasma is
                 safe to use.</p>
-        </div>
-        <div class="question">
-            <p class="question">Will my donated plasma go directly to a COVID-19 patient?</p>
-            <p class="text">No. Plasma collected from individual donors is pooled, processed, and
+        </article>
+        <article class="question">
+            <h1>Will my donated plasma go directly to a COVID-19 patient?</h1>
+            <p>No. Plasma collected from individual donors is pooled, processed, and
                 concentrated into a liquid that contains antibodies (part of the immune system). This
                 plasma-derived therapy must then be tested in clinical trials to determine if it is safe and
                 effective before it could be approved as a treatment.</p>
-        </div>
-        <div class="question">
-            <p class="question">Why aren’t you giving donated plasma directly to COVID-19 patients through
-                transfusions?</p>
-            <p class="text">Plasma from people who have recovered from COVID-19 – known as
+        </article>
+        <article class="question">
+            <h1>Why aren’t you giving donated plasma directly to COVID-19 patients through
+                transfusions?</h1>
+            <p>Plasma from people who have recovered from COVID-19 – known as
                 “convalescent plasma” – contains antibodies that can help fight the virus. This plasma can be
                 used in two ways. One way is transfusing it directly to people who have active COVID-19. The
                 other is using the plasma to make a potential treatment called a polyclonal hyperimmune globulin
                 (H-IG), which concentrates the antibodies into a medicine.</p>
-            <p class="text">Both uses are important, and both have the potential to treat COVID-19. We welcome
+            <p>Both uses are important, and both have the potential to treat COVID-19. We welcome
                 all initiatives to address the pandemic, including vaccines and other treatments. The work of
                 The CoVIg-19 Plasma Alliance is focusing on developing an H-IG, which has properties that make
                 it a very promising candidate for a potential global treatment for COVID-19.</p>
-        </div>
-        <div class="question">
-            <p class="question">What are the benefits of H-IG?</p>
-            <p class="text">Because H-IG has a higher concentration of antibodies, it can be delivered in lower
+        </article>
+        <article class="question">
+            <h1>What are the benefits of H-IG?</h1>
+            <p>Because H-IG has a higher concentration of antibodies, it can be delivered in lower
                 volumes, and therefore would likely take less time to administer to patients than plasma itself.
                 H-IG also has a longer shelf life, which makes it easier to ship to patients around the world.
                 Both of these attributes also make H-IG much easier for hospitals to store and administer to
                 patients.</p>
-            <p class="text">The manufacturing process used to produce plasma-based therapies makes it
+            <p>The manufacturing process used to produce plasma-based therapies makes it
                 possible to set standards for antibody levels. This process, which includes numerous steps of
                 virus inactivation and removal, significantly reduces the risk of transmitting any kind of virus
                 (not just coronavirus) from donors to patients.</p>
-            <p class="text">Plasma-derived therapies, like H-IG, have already been shown to be effective in
+            <p>Plasma-derived therapies, like H-IG, have already been shown to be effective in
                 treating severe viral respiratory infections. The work of the Alliance is determining whether
                 they may also be a potential option for treating high-risk COVID-19 patients and preventing
                 pulmonary disease in people at increased risk of infection from the virus, including healthcare
                 workers.</p>
-        </div>
-        <div class="question">
-            <p class="question">Is this part of the National Covid-19 Convalescent Plasma Project?</p>
-            <p class="text">No. Though you might have heard about that or similar efforts in recent weeks, or
+        </article>
+        <article class="question">
+            <h1>Is this part of the National Covid-19 Convalescent Plasma Project?</h1>
+            <p>No. Though you might have heard about that or similar efforts in recent weeks, or
                 even know someone who is participating in them, the CoVIg-19 Plasma Alliance is a separate
                 initiative led by the world’s leading plasma experts. A key difference is that we are not giving
                 plasma itself to COVID-19 patients, but instead using the plasma we collect to help develop a
                 potential therapy.</p>
-        </div>
-        <div class="question">
-            <p class="question">Do I need to tell my doctor or insurance company that I’m donating?</p>
-            <p class="text">Your doctor will need to provide written documentation that you have recovered from
+        </article>
+        <article class="question">
+            <h1>Do I need to tell my doctor or insurance company that I’m donating?</h1>
+            <p>Your doctor will need to provide written documentation that you have recovered from
                 COVID-19 and are no longer contagious. You shouldn’t need to inform your insurance provider, as
                 you will not be charged in any way for your donation.</p>
-        </div>
-        <div class="question">
-            <p class="question">Do I need to change my diet?</p>
-            <p class="text">In general, no. However, you should be well-nourished. Please eat a light but
+        </article>
+        <article class="question">
+            <h1>Do I need to change my diet?</h1>
+            <p>In general, no. However, you should be well-nourished. Please eat a light but
                 healthy meal three hours before your donation. This means a meal that is high in protein (such
                 as eggs, fish, or nuts), rich in iron (such as tuna, lean red meat, nuts, or beans), and low in
                 fat (fatty or fried foods can interfere with laboratory testing). Since plasma is 90% water, you
                 should also be well-hydrated, so drink plenty of water, juice, or other fluids the day before
                 your donation. Please do not drink any alcohol the night before or the day of your donation.</p>
-        </div>
-        <div class="question">
-            <p class="question">Can I donate more than twice?</p>
-            <p class="text">You certainly may donate more than twice — so long as you’re eligible at each
+        </article>
+        <article class="question">
+            <h1>Can I donate more than twice?</h1>
+            <p>You certainly may donate more than twice — so long as you’re eligible at each
                 donation. We encourage you to consider becoming a regular plasma donor to help save lives!
                 Plasma is used in a variety of therapies, including to help treat serious and rare diseases.</p>
-        </div>
-        <div class="question">
-            <p class="question">How else can I help fight COVID-19?</p>
-            <p class="text">If you know someone else who has recovered from COVID-19, please encourage them to
+        </article>
+        <article class="question">
+            <h1>How else can I help fight COVID-19?</h1>
+            <p>If you know someone else who has recovered from COVID-19, please encourage them to
                 visit this website to learn more about the opportunity to donate their plasma as well!</p>
-        </div>
+        </article>
     </div>
     <div class="part-right">
         <div class="get-started desktop">
             <button onclick="showBot()">GET STARTED</button>
         </div>
-        <p class="title">Your Plasma Is Needed Now</p>
-        <p class="text">If you have recovered from COVID-19 recently, your plasma may have the power to help others
-            through a potential treatment for the new coronavirus.</p>
-        <p class="text">By donating your plasma, a part of your blood that contains proteins and antibodies, you could
-            play a key role in helping scientists develop an investigational plasma-derived therapy for treating
-            high-risk COVID-19 patients that will be tested in clinical trials this summer. The results of these trials
-            will determine whether the new therapy has the potential to treat high-risk COVID-19 patients and prevent
-            pulmonary disease in people at increased risk of infection from the virus, including healthcare workers.</p>
-        <p class="text">The fight against COVID-19 starts with you. You’re a survivor. Now be a hero. Learn more here
-            about how you can be a part of this historic effort to treat the new coronavirus and stop the spread of the
-            pandemic.</p>
-
+        <article>
+            <h1>Your Plasma Is Needed Now</h1>
+            <p>If you have recovered from COVID-19 recently, your plasma may have the power to help others
+                through a potential treatment for the new coronavirus.</p>
+            <p>By donating your plasma, a part of your blood that contains proteins and antibodies, you could
+                play a key role in helping scientists develop an investigational plasma-derived therapy for treating
+                high-risk COVID-19 patients that will be tested in clinical trials this summer. The results of these trials
+                will determine whether the new therapy has the potential to treat high-risk COVID-19 patients and prevent
+                pulmonary disease in people at increased risk of infection from the virus, including healthcare workers.</p>
+            <p>The fight against COVID-19 starts with you. You’re a survivor. Now be a hero. Learn more here
+                about how you can be a part of this historic effort to treat the new coronavirus and stop the spread of the
+                pandemic.</p>
+        </article>
     </div>
 </div>
 

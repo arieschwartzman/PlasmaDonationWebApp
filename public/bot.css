@@ -111,3 +111,9 @@ button.ac-pushButton:hover {
 button:hover > div {
     color: white !important;
 }
+
+
+.message .from-user.bubble .webchat__bubble__content{
+    background-color: #22393f !important;
+    color: white !important;
+}
