@@ -91,6 +91,10 @@ body > nav select {
     border-radius: 5px;
 }
 
+body > nav select:focus {
+    border-color: var(--covig_blue3);
+}
+
 body > nav > div > ul.nav-tabs {
     margin-top: 0;
     border: none;
@@ -264,7 +268,7 @@ body > nav > div > ul.nav-tabs.nav-tabs > li.nav-item > a.active {
     font-weight: 600;
     font-size: 20px;
     line-height: 22px;
-    margin-bottom: 2pxpx;
+    margin-bottom: 2 pxpx;
     font-family: Nunito-Sans;
 }
 
@@ -511,7 +515,7 @@ body > nav > div > ul.nav-tabs.nav-tabs > li.nav-item > a.active {
 }
 
 @media screen and (max-width: 850px) {
-    #questions-and-answers{
+    #questions-and-answers {
         width: 100%;
     }
 }
