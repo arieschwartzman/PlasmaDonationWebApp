@@ -170,7 +170,6 @@ app.post('/chatBot',  function(req, res) {
         });
 });
 
-
 app.get("/", (req, res) => {
     res.redirect("/en-us");
 });
