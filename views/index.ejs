@@ -10,7 +10,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat-es5.gzip.js"></script>
-    <title><%-pageTitle %></title>
+    <title><%- pageTitle %></title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="dist/css/bootstrap.min.css">
@@ -28,7 +28,7 @@
 <header>
     <div>
         <img alt="" src="images/Logo@3x.png">
-        <span><%-pageTitle %></span>
+        <span><%- pageTitle %></span>
     </div>
 </header>
 <button id="hamburger" onclick="toggleMenu()"><img alt="" src="images/hamburger.png"></button>
@@ -39,44 +39,62 @@
             <li class="nav-item">
                 <a class="nav-link" id="recruitment-tab" data-toggle="tab" href="#recruitment" role="tab"
                    onclick="location.hash = '#recruitment'">
-                    <%-menu.recruitment %>
+                    <%- menu.recruitment %>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" id="info-tab" data-toggle="tab" href="#info" role="tab"
                    onclick="location.hash = '#info'">
-                    <%-menu.info %>
+                    <%- menu.info %>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" id="about-tab" data-toggle="tab" href="#about" role="tab"
                    onclick="location.hash = '#about'">
-                    <%-menu.about %>
+                    <%- menu.about %>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" id="qna-tab" data-toggle="tab" href="#qna" role="tab"
                    onclick="location.hash = '#qna'">
-                    <%-menu.qna %>
+                    <%- menu.qna %>
                 </a>
             </li>
         </ul>
         <select id="language" name="language" onchange="changeLocale(this)">
-            <option value="en-us" <% if(language === "en-us") {%>selected<%}%>>English</option>
-            <option value="fr-fr" <% if(language === "fr-fr") {%>selected<%}%>>French</option>
-            <option value="de-de" <% if(language === "de-de") {%>selected<%}%>>German</option>
-            <option value="it-it" <% if(language === "it-it") {%>selected<%}%>>Italian</option>
-            <option value="pt-pt" <% if(language === "pt-pt") {%>selected<%}%>>Portuguese</option>
-            <option value="es-es" <% if(language === "es-es") {%>selected<%}%>>Spanish</option>
+            <option value="en-us" <% if(language === "en-us") { %>selected
+                    <% } %>
+            >English
+            </option>
+            <option value="fr-fr" <% if(language === "fr-fr") { %>selected
+                    <% } %>
+            >French
+            </option>
+            <option value="de-de" <% if(language === "de-de") { %>selected
+                    <% } %>
+            >German
+            </option>
+            <option value="it-it" <% if(language === "it-it") { %>selected
+                    <% } %>
+            >Italian
+            </option>
+            <option value="pt-pt" <% if(language === "pt-pt") { %>selected
+                    <% } %>
+            >Portuguese
+            </option>
+            <option value="es-es" <% if(language === "es-es") { %>selected
+                    <% } %>
+            >Spanish
+            </option>
         </select>
     </div>
 </nav>
 
 <div class="top-context">
     <div>
-        <h2><%-pageHeader.upperLine %></h2>
-        <h1><%-pageHeader.mainLine %></h1>
-        <h4><%-pageHeader.lowerLine %></h4>
+        <h2><%- pageHeader.upperLine %></h2>
+        <h1><%- pageHeader.mainLine %></h1>
+        <h4><%- pageHeader.lowerLine %></h4>
     </div>
 </div>
 <div class="main-content">
@@ -93,88 +111,148 @@
                     <img src="images/Circle%20image-6.png">
                 </section>
                 <article>
-                    <h1><%-tabContents.recruitment.title %></h1>
-                    <% for (var i = 0; i < tabContents.recruitment.text.length; i++) { %>
-                    <p><%-tabContents.recruitment.text[i] %></p>
+                    <% for (var i = 0; i < tabContents.recruitment.length; i++) { %>
+                        <% if (tabContents.recruitment[i].type === "headline") { %>
+                            <h1><%- tabContents.recruitment[i].text %></h1>
+                        <% } else if (tabContents.recruitment[i].type === "subhead") { %>
+                            <h2><%- tabContents.recruitment[i].text %></h2>
+                        <% } else if (tabContents.recruitment[i].type === "text") { %>
+                            <p><%- tabContents.recruitment[i].text %></p>
+                        <% } %>
                     <% } %>
                 </article>
-
             </div>
             <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
+                <article>
+                    <% for (var i = 0; i < tabContents.info.intro.length; i++) { %>
+                        <% if (tabContents.info.intro[i].type === "headline") { %>
+                            <h1><%- tabContents.info.intro[i].text %></h1>
+                        <% } else if (tabContents.info.intro[i].type === "subhead") { %>
+                            <h2><%- tabContents.info.intro[i].text %></h2>
+                        <% } else if (tabContents.info.intro[i].type === "text") { %>
+                            <p><%- tabContents.info.intro[i].text %></p>
+                        <% } %>
+                    <% } %>
+                </article>
                 <img class="infographic" src="images/path.png">
+                <article>
+                    <% for (var i = 0; i < tabContents.info.outro.length; i++) { %>
+                        <% if (tabContents.info.outro[i].type === "headline") { %>
+                            <h1><%- tabContents.info.outro[i].text %></h1>
+                        <% } else if (tabContents.info.outro[i].type === "subhead") { %>
+                            <h2><%- tabContents.info.outro[i].text %></h2>
+                        <% } else if (tabContents.info.outro[i].type === "text") { %>
+                            <p><%- tabContents.info.outro[i].text %></p>
+                        <% } %>
+                    <% } %>
+                </article>
             </div>
             <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">
                 <article>
-                    <h1><%-tabContents.about.title %></h1>
-                    <% for (var i = 0; i < tabContents.about.preText.length; i++) { %>
-                        <p><%-tabContents.about.preText[i] %></p>
+                    <% for (var i = 0; i < tabContents.about.intro.length; i++) { %>
+                        <% if (tabContents.about.intro[i].type === "headline") { %>
+                            <h1><%- tabContents.about.intro[i].text %></h1>
+                        <% } else if (tabContents.about.intro[i].type === "subhead") { %>
+                            <h2><%- tabContents.about.intro[i].text %></h2>
+                        <% } else if (tabContents.about.intro[i].type === "text") { %>
+                            <p><%- tabContents.about.intro[i].text %></p>
+                        <% } %>
                     <% } %>
+
                     <ol>
-                        <% for (var i = 0; i < tabContents.about.items.length; i++) { %>
-                            <li>
-                                <h1><%-tabContents.about.items[i].title%></h1>
-                                <% for (var j = 0; j < tabContents.about.items[i].text.length; j++) { %>
-                                    <p><%-tabContents.about.items[i].text[j] %></p>
-                                <% } %>
-                        <% } %>
+                        <% for (var i = 0; i < tabContents.about.steps.length; i++) { %>
+                        <li>
+                            <h1><%- tabContents.about.steps[i].title %></h1>
+                            <% for (var j = 0; j < tabContents.about.steps[i].text.length; j++) { %>
+                                <p><%- tabContents.about.steps[i].text[j] %></p>
+                            <% } %>
+                            <% } %>
                     </ol>
-                    <br>
-                    <summary>
-                        <% for (var i = 0; i < tabContents.about.postText.length; i++) { %>
-                            <p><%-tabContents.about.postText[i] %></p>
-                        <% } %>
-                    </summary>
-
-                    <article class="info-area">
+                    <div class="info-area">
                         <div>
-                            <h1><%-tabContents.about.info[0].title%></h1>
+                            <h1><%- tabContents.about.info[0].title %></h1>
                             <img src="images/plasma.png" class="plasma">
-                            <p><%-tabContents.about.info[0].text%></p>
+                            <p><%- tabContents.about.info[0].text %></p>
                         </div>
                         <div>
-                            <h1><%-tabContents.about.info[1].title%></h1>
-                            <p><%-tabContents.about.info[1].text%></p>
+                            <h1><%- tabContents.about.info[1].title %></h1>
+                            <p><%- tabContents.about.info[1].text %></p>
                         </div>
-                    </article>
+                    </div>
+                    <br>
+                    <% for (var i = 0; i < tabContents.about.outro.length; i++) { %>
+                        <% if (tabContents.about.outro[i].type === "headline") { %>
+                            <h1><%- tabContents.about.outro[i].text %></h1>
+                        <% } else if (tabContents.about.outro[i].type === "subhead") { %>
+                            <h2><%- tabContents.about.outro[i].text %></h2>
+                        <% } else if (tabContents.about.outro[i].type === "text") { %>
+                            <p><%- tabContents.about.outro[i].text %></p>
+                        <% } %>
+                    <% } %>
                 </article>
-
             </div>
             <div class="tab-pane fade" id="qna" role="tabpanel" aria-labelledby="qna-tab">
-                <h1><%-tabContents.qna.title%></h1>
+                <h1><%- tabContents.qna.title %></h1>
                 <section id="questions-and-answers">
-
+                    <article>
+                        <% for (var i = 0; i < tabContents.qna.intro.length; i++) { %>
+                        <% if (tabContents.qna.intro[i].type === "headline") { %>
+                            <h1><%- tabContents.qna.intro[i].text %></h1>
+                        <% } else if (tabContents.qna.intro[i].type === "subhead") { %>
+                            <h2><%- tabContents.qna.intro[i].text %></h2>
+                        <% } else if (tabContents.qna.intro[i].type === "text") { %>
+                            <p><%- tabContents.qna.intro[i].text %></p>
+                        <% } %>
+                    <% } %>
+                    <br>
                     <% for (var i = 0; i < tabContents.qna.items.length; i++) { %>
                         <details class="question">
-                            <summary><%-tabContents.qna.items[i].q %></summary>
+                            <summary><%- tabContents.qna.items[i].q %></summary>
                             <% for (var j = 0; j < tabContents.qna.items[i].a.length; j++) { %>
                                 <p><%- tabContents.qna.items[i].a[j] %></p>
                             <% } %>
                         </details>
                     <% } %>
+                    <br>
+                    <% for (var i = 0; i < tabContents.qna.outro.length; i++) { %>
+                        <% if (tabContents.qna.outro[i].type === "headline") { %>
+                            <h1><%- tabContents.qna.outro[i].text %></h1>
+                        <% } else if (tabContents.qna.outro[i].type === "subhead") { %>
+                            <h2><%- tabContents.qna.outro[i].text %></h2>
+                        <% } else if (tabContents.qna.outro[i].type === "text") { %>
+                            <p><%- tabContents.qna.outro[i].text %></p>
+                        <% } %>
+                    <% } %>
+                    </article>
                 </section>
             </div>
         </div>
     </div>
     <div class="part-right">
         <div class="get-started desktop">
-            <button onclick="showBot()"><%=getStarted.buttonText%></button>
+            <button onclick="showBot()"><%= getStarted.buttonText %></button>
         </div>
         <article>
-            <h1><%-getStarted.title%></h1>
-            <% for (var i = 0; i < getStarted.text.length; i++) { %>
-                <p><%-getStarted.text[i]%></p>
+            <% for (var i = 0; i < getStarted.parts.length; i++) { %>
+                <% if (getStarted.parts[i].type === "headline") { %>
+                    <h1><%- getStarted.parts[i].text %></h1>
+                <% } else if (getStarted.parts[i].type === "subhead") { %>
+                    <h2><%- getStarted.parts[i].text %></h2>
+                <% } else if (getStarted.parts[i].type === "text") { %>
+                    <p><%- getStarted.parts[i].text %></p>
+                <% } %>
             <% } %>
         </article>
     </div>
 </div>
 
 <div class="get-started mobile ">
-    <button onclick="showBot()"><%-getStarted.buttonText%></button>
+    <button onclick="showBot()"><%- getStarted.buttonText %></button>
 </div>
 
 <div class="panel">
     <header>
-        <h1><%-bot.panelTitle%></h1>
+        <h1><%- bot.panelTitle %></h1>
         <button class="close-button" onclick="hideBot()">X</button>
     </header>
     <div id="webchat" role="main" watermark="false"></div>

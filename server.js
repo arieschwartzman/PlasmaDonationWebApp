@@ -170,18 +170,16 @@ app.post('/chatBot',  function(req, res) {
         });
 });
 
-const fs = require("fs");
-app.get("/", (req, res) => {
-    fs.readFile(path.join(__dirname, '/content/en-us.json'), (err, content) => {
-        res.render("index.ejs", JSON.parse(content.toString()));
-    });
-});
 
+app.get("/", (req, res) => {
+    res.redirect("/en-us");
+});
+const fs = require("fs");
 app.get("/:locale", (req, res) => {
     try {
         fs.readFile(path.join(__dirname, `/content/${req.params.locale}.json`), (err, content) => {
             if (err) {
-                res.redirect("/")
+                res.redirect("/en-us")
             } else {
                 res.render("index.ejs", JSON.parse(content.toString()));
             }

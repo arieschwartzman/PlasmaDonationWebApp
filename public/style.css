@@ -264,17 +264,17 @@ body > nav > div > ul.nav-tabs.nav-tabs > li.nav-item > a.active {
     font-weight: 600;
     font-size: 20px;
     line-height: 22px;
-    margin-bottom: 10px;
+    margin-bottom: 2pxpx;
     font-family: Nunito-Sans;
 }
 
 .main-content h2 {
     font-family: Nunito-Sans;
     font-weight: 800;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 16px;
-    margin-bottom: 10px;
-    color: var(--covig_red2);
+    margin: 20px 0 10px 0;
+    color: var(--covig_black1);
 }
 
 .main-content ol {
@@ -502,13 +502,16 @@ body > nav > div > ul.nav-tabs.nav-tabs > li.nav-item > a.active {
     z-index: 10;
 }
 
-#questions-and-answers,
-.infographic {
+#questions-and-answers {
     max-width: 780px;
 }
 
+.infographic {
+    width: 100%;
+}
+
 @media screen and (max-width: 850px) {
-    #questions-and-answers, .infographic {
+    #questions-and-answers{
         width: 100%;
     }
 }
