@@ -2,6 +2,7 @@ require('dotenv').config();
 const defaultLocale = 'en-US';
 const localeRegExPattern = /^[a-z]{2}(-[A-Z]{2})?$/;
 const crypto = require('crypto');
+const fs = require("fs");
 const express = require("express");
 const path = require("path");
 const jwt = require("jsonwebtoken");
@@ -169,11 +170,6 @@ app.post('/chatBot',  function(req, res) {
             console.log("failed");
         });
 });
-
-app.get("/", (req, res) => {
-    res.redirect("/en-us");
-});
-const fs = require("fs");
 app.get("/:locale", (req, res) => {
     try {
         fs.readFile(path.join(__dirname, `/content/${req.params.locale}.json`), (err, content) => {
@@ -187,4 +183,7 @@ app.get("/:locale", (req, res) => {
     catch (e) {
         res.redirect("/")
     }
+});
+app.get("/", (req, res) => {
+    res.redirect("/en-us");
 });
