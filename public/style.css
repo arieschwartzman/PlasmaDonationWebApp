@@ -106,9 +106,6 @@ body > nav > div > ul.nav-tabs > li.nav-item {
     display: inline-block;
 }
 
-body > nav > div > ul.nav-tabs.nav-tabs > li.nav-item > a {
-    border: none;
-}
 
 body > header > div > img {
     margin: 0 14px 0 0;
@@ -136,10 +133,11 @@ button#close-menu {
 }
 
 
-body > nav > div > ul.nav-tabs.nav-tabs > li.nav-item > a {
+body > nav > div > ul.nav-tabs > li.nav-item > a {
     text-align: center;
     cursor: pointer;
     color: var(--covig_black1);
+    border: none;
     border-bottom: 2px solid transparent;
     text-align: left;
     font-family: din-condensed;
@@ -148,9 +146,7 @@ body > nav > div > ul.nav-tabs.nav-tabs > li.nav-item > a {
     padding: 0px 7px;
 }
 
-body > nav > div > ul.nav-tabs.nav-tabs > li.nav-item > a:first-child {
-    margin-left: 0;
-}
+
 
 body > nav > div > ul.nav-tabs.nav-tabs > li.nav-item > a:hover,
 body > nav > div > ul.nav-tabs.nav-tabs > li.nav-item > a.active {
@@ -268,7 +264,7 @@ body > nav > div > ul.nav-tabs.nav-tabs > li.nav-item > a.active {
     font-weight: 600;
     font-size: 20px;
     line-height: 22px;
-    margin-bottom: 2 pxpx;
+    margin-bottom: 2pxpx;
     font-family: Nunito-Sans;
 }
 
@@ -515,7 +511,7 @@ body > nav > div > ul.nav-tabs.nav-tabs > li.nav-item > a.active {
 }
 
 @media screen and (max-width: 850px) {
-    #questions-and-answers {
+    #questions-and-answers{
         width: 100%;
     }
 }
@@ -648,15 +644,13 @@ body > nav button img {
     }
 
     body > nav > div > ul.nav-tabs > li.nav-item > a {
-        font-size: 19px;
-        line-height: 19px;
         margin-bottom: 19px;
-        font-weight: 200;
         display: block;
-        width: 80%;
+        width: 90%;
         text-align: left;
         padding-left: 0;
         margin-left: 0;
+        font-family: din-condensed;
     }
 
     body > header {
