@@ -482,6 +482,7 @@ body > nav button img {
         height: 50px;
         background: transparent;
         border: none;
+        z-index: 1;
     }
     .top-context {padding-left: 20px;}
     body > nav {
