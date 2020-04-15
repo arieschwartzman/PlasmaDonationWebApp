@@ -179,5 +179,7 @@ $(document).ready(function () {
 
     $('a[data-toggle="tab"]').on('shown.bs.tab', function () {
       window.scroll(0, 0);
+      $('nav').removeClass("in");
     });
+
 });
