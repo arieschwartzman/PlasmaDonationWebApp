@@ -685,7 +685,7 @@ div.step-card {
     border: 1px solid #B7B7B7;
     border-radius: 6px;
     opacity: 1;
-    margin: 6px 0;
+    margin-bottom: 16px;
     position: relative;
     padding-left: 152px;
     padding-right: 44px;
