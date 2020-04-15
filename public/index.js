@@ -22,12 +22,12 @@ function requestChatBot(loc) {
 }
 
 function extractLocale(localeParam) {
-    if(localeParam === 'autodetect') {
+    if (localeParam === 'autodetect') {
         return navigator.language;
     }
 
     //Before assigning, ensure it's a valid locale string (xx or xx-XX)
-    if(localeParam.search(localeRegExPattern) === 0) {
+    if (localeParam.search(localeRegExPattern) === 0) {
         return localeParam;
     }
     return defaultLocale;
@@ -37,16 +37,15 @@ function chatRequested() {
     const params = new URLSearchParams(location.search);
     if (params.has('shareLocation')) {
         getUserLocation(requestChatBot);
-    }
-    else {
+    } else {
         requestChatBot();
     }
 }
 
 function getUserLocation(callback) {
     navigator.geolocation.getCurrentPosition(
-        function(position) {
-            var latitude  = position.coords.latitude;
+        function (position) {
+            var latitude = position.coords.latitude;
             var longitude = position.coords.longitude;
             var location = {
                 lat: latitude,
@@ -54,7 +53,7 @@ function getUserLocation(callback) {
             }
             callback(location);
         },
-        function(error) {
+        function (error) {
             // user declined to share location
             console.log("location error:" + error.message);
             callback();
@@ -76,7 +75,7 @@ function initBotConversation() {
     };
     let domain = undefined;
     if (tokenPayload.directLineURI) {
-        domain =  "https://" +  tokenPayload.directLineURI + "/v3/directline";
+        domain = "https://" + tokenPayload.directLineURI + "/v3/directline";
     }
     var botConnection = window.WebChat.createDirectLine({
         token: tokenPayload.connectorToken,
@@ -90,45 +89,48 @@ function initBotConversation() {
         backgroundColor: '#f4f5f5'
     };
 
-    const store = window.WebChat.createStore({}, function(store) { return function(next) { return function(action) {
-        if (action.type === 'DIRECT_LINE/CONNECT_FULFILLED') {
-            store.dispatch({
-                type: 'DIRECT_LINE/POST_ACTIVITY',
-                meta: {method: 'keyboard'},
-                payload: {
-                    activity: {
-                        type: "invoke",
-                        name: "InitConversation",
-                        locale: user.locale,
-                        value: {
-                            // must use for authenticated conversation.
-                            jsonWebToken: jsonWebToken,
+    const store = window.WebChat.createStore({}, function (store) {
+        return function (next) {
+            return function (action) {
+                if (action.type === 'DIRECT_LINE/CONNECT_FULFILLED') {
+                    store.dispatch({
+                        type: 'DIRECT_LINE/POST_ACTIVITY',
+                        meta: {method: 'keyboard'},
+                        payload: {
+                            activity: {
+                                type: "invoke",
+                                name: "InitConversation",
+                                locale: user.locale,
+                                value: {
+                                    // must use for authenticated conversation.
+                                    jsonWebToken: jsonWebToken,
 
-                            // Use the following activity to proactively invoke a bot scenario
-                            
-                            triggeredScenario: {
-                                trigger: "findplasmacenter"
+                                    // Use the following activity to proactively invoke a bot scenario
+
+                                    triggeredScenario: {
+                                        trigger: "findplasmacenter"
+                                    }
+
+                                }
                             }
-                            
                         }
+                    });
+
+                } else if (action.type === 'DIRECT_LINE/INCOMING_ACTIVITY') {
+                    if (action.payload && action.payload.activity && action.payload.activity.type === "event" && action.payload.activity.name === "ShareLocationEvent") {
+                        // share
+                        getUserLocation(function (location) {
+                            store.dispatch({
+                                type: 'WEB_CHAT/SEND_POST_BACK',
+                                payload: {value: JSON.stringify(location)}
+                            });
+                        });
                     }
                 }
-            });
-
-        }
-        else if (action.type === 'DIRECT_LINE/INCOMING_ACTIVITY') {
-            if (action.payload && action.payload.activity && action.payload.activity.type === "event" && action.payload.activity.name === "ShareLocationEvent") {
-                // share
-                getUserLocation(function (location) {
-                    store.dispatch({
-                        type: 'WEB_CHAT/SEND_POST_BACK',
-                        payload: { value: JSON.stringify(location) }
-                    });
-                });
+                return next(action);
             }
         }
-        return next(action);
-    }}});
+    });
     const webchatOptions = {
         directLine: botConnection,
         styleOptions: styleOptions,
@@ -147,6 +149,7 @@ function startChat(user, webchatOptions) {
 
 
 var botRequested = false;
+
 function showBot() {
     if (!botRequested) {
         chatRequested();
@@ -166,5 +169,15 @@ function toggleMenu() {
 }
 
 function changeLocale(el) {
-    location.href= "/" + el.value + location.hash;
+    location.href = "/" + el.value + location.hash;
 }
+
+$(document).ready(function () {
+    setTimeout(function () {
+        window.scroll(0, 0);
+    }, 100);
+
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function () {
+      window.scroll(0, 0);
+    });
+});

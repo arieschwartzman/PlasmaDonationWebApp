@@ -184,6 +184,7 @@ app.get("/:locale", (req, res) => {
         res.redirect("/")
     }
 });
+
 app.get("/", (req, res) => {
     res.redirect("/en-us");
 });
