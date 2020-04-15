@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/png" href="images/Logo.png"/>
+
+    <link rel="stylesheet" href="https://use.typekit.net/pnq1ezd.css">
+    <script src="dist/jquery.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat-es5.gzip.js"></script>
+    <title><%-pageTitle %></title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/pnq1ezd.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+
+    <script src="index.js"></script>
+    <link href="bot.css" rel="stylesheet"/>
+</head>
+<body>
+<header>
+    <div>
+        <img alt="" src="images/Logo@3x.png">
+        <span><%-pageTitle %></span>
+    </div>
+</header>
+<button id="hamburger" onclick="toggleMenu()"><img alt="" src="images/hamburger.png"></button>
+<nav>
+    <button id="close-menu" onclick="toggleMenu()">X</button>
+    <div>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link" id="recruitment-tab" data-toggle="tab" href="#recruitment" role="tab"
+                   onclick="location.hash = '#recruitment'">
+                    <%-menu.recruitment %>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="info-tab" data-toggle="tab" href="#info" role="tab"
+                   onclick="location.hash = '#info'">
+                    <%-menu.info %>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="about-tab" data-toggle="tab" href="#about" role="tab"
+                   onclick="location.hash = '#about'">
+                    <%-menu.about %>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="qna-tab" data-toggle="tab" href="#qna" role="tab"
+                   onclick="location.hash = '#qna'">
+                    <%-menu.qna %>
+                </a>
+            </li>
+        </ul>
+        <select id="language" name="language" onchange="changeLocale(this)">
+            <option value="en-us" <% if(language === "en-us") {%>selected<%}%>>English</option>
+            <option value="fr-fr" <% if(language === "fr-fr") {%>selected<%}%>>French</option>
+            <option value="de-de" <% if(language === "de-de") {%>selected<%}%>>German</option>
+            <option value="it-it" <% if(language === "it-it") {%>selected<%}%>>Italian</option>
+            <option value="pt-pt" <% if(language === "pt-pt") {%>selected<%}%>>Portuguese</option>
+            <option value="es-es" <% if(language === "es-es") {%>selected<%}%>>Spanish</option>
+        </select>
+    </div>
+</nav>
+
+<div class="top-context">
+    <div>
+        <h2><%-pageHeader.upperLine %></h2>
+        <h1><%-pageHeader.mainLine %></h1>
+        <h4><%-pageHeader.lowerLine %></h4>
+    </div>
+</div>
+<div class="main-content">
+    <div class="part-left">
+        <div class="tab-content" id="tab-content">
+            <div class="tab-pane fade" id="recruitment" role="tabpanel" aria-labelledby="recruitment-tab">
+                <section class="icons">
+                    <img src="images/Circle%20image-0.png">
+                    <img src="images/Circle%20image-1.png">
+                    <img src="images/Circle%20image-2.png">
+                    <img src="images/Circle%20image-3.png">
+                    <img src="images/Circle%20image-4.png">
+                    <img src="images/Circle%20image-5.png">
+                    <img src="images/Circle%20image-6.png">
+                </section>
+                <article>
+                    <h1><%-tabContents.recruitment.title %></h1>
+                    <% for (var i = 0; i < tabContents.recruitment.text.length; i++) { %>
+                    <p><%-tabContents.recruitment.text[i] %></p>
+                    <% } %>
+                </article>
+
+            </div>
+            <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
+                <img class="infographic" src="images/path.png">
+            </div>
+            <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">
+                <article>
+                    <h1><%-tabContents.about.title %></h1>
+                    <% for (var i = 0; i < tabContents.about.preText.length; i++) { %>
+                        <p><%-tabContents.about.preText[i] %></p>
+                    <% } %>
+                    <ol>
+                        <% for (var i = 0; i < tabContents.about.items.length; i++) { %>
+                            <li>
+                                <h1><%-tabContents.about.items[i].title%></h1>
+                                <% for (var j = 0; j < tabContents.about.items[i].text.length; j++) { %>
+                                    <p><%-tabContents.about.items[i].text[j] %></p>
+                                <% } %>
+                        <% } %>
+                    </ol>
+                    <br>
+                    <summary>
+                        <% for (var i = 0; i < tabContents.about.postText.length; i++) { %>
+                            <p><%-tabContents.about.postText[i] %></p>
+                        <% } %>
+                    </summary>
+
+                    <article class="info-area">
+                        <div>
+                            <h1><%-tabContents.about.info[0].title%></h1>
+                            <img src="images/plasma.png" class="plasma">
+                            <p><%-tabContents.about.info[0].text%></p>
+                        </div>
+                        <div>
+                            <h1><%-tabContents.about.info[1].title%></h1>
+                            <p><%-tabContents.about.info[1].text%></p>
+                        </div>
+                    </article>
+                </article>
+
+            </div>
+            <div class="tab-pane fade" id="qna" role="tabpanel" aria-labelledby="qna-tab">
+                <h1><%-tabContents.qna.title%></h1>
+                <section id="questions-and-answers">
+
+                    <% for (var i = 0; i < tabContents.qna.items.length; i++) { %>
+                        <details class="question">
+                            <summary><%-tabContents.qna.items[i].q %></summary>
+                            <% for (var j = 0; j < tabContents.qna.items[i].a.length; j++) { %>
+                                <p><%- tabContents.qna.items[i].a[j] %></p>
+                            <% } %>
+                        </details>
+                    <% } %>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="part-right">
+        <div class="get-started desktop">
+            <button onclick="showBot()"><%=getStarted.buttonText%></button>
+        </div>
+        <article>
+            <h1><%-getStarted.title%></h1>
+            <% for (var i = 0; i < getStarted.text.length; i++) { %>
+                <p><%-getStarted.text[i]%></p>
+            <% } %>
+        </article>
+    </div>
+</div>
+
+<div class="get-started mobile ">
+    <button onclick="showBot()"><%-getStarted.buttonText%></button>
+</div>
+
+<div class="panel">
+    <header>
+        <h1><%-bot.panelTitle%></h1>
+        <button class="close-button" onclick="hideBot()">X</button>
+    </header>
+    <div id="webchat" role="main" watermark="false"></div>
+</div>
+
+<script>
+    switch (location.hash) {
+        case "#recruitment":
+            $('#recruitment-tab').click();
+            break;
+        case "#info":
+            $('#info-tab').click();
+            break;
+        case "#about":
+            $('#about-tab').click();
+            break;
+        case "#qna":
+            $('#qna-tab').click();
+            break;
+        default:
+            $('#recruitment-tab').click();
+    }
+</script>
+</body>
+</html>

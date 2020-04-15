@@ -164,3 +164,7 @@ function hideBot() {
 function toggleMenu() {
     $('nav').toggleClass("in");
 }
+
+function changeLocale(el) {
+    location.href= "/" + el.value + location.hash;
+}

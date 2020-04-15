@@ -22,6 +22,9 @@ const directLineTokenEp = `https://${DIRECTLINE_ENDPOINT_URI || "directline.botf
 const app = express();
 app.use(cookieParser());
 app.use(bodyParser.json());
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
 // Indicate which directory static resources
 // (e.g. stylesheets) should be served from.
 app.use(express.static(path.join(__dirname, "public")));
@@ -165,4 +168,26 @@ app.post('/chatBot',  function(req, res) {
             res.status(err.statusCode).send();
             console.log("failed");
         });
+});
+
+const fs = require("fs");
+app.get("/", (req, res) => {
+    fs.readFile(path.join(__dirname, '/content/en-us.json'), (err, content) => {
+        res.render("index.ejs", JSON.parse(content.toString()));
+    });
+});
+
+app.get("/:locale", (req, res) => {
+    try {
+        fs.readFile(path.join(__dirname, `/content/${req.params.locale}.json`), (err, content) => {
+            if (err) {
+                res.redirect("/")
+            } else {
+                res.render("index.ejs", JSON.parse(content.toString()));
+            }
+        });
+    }
+    catch (e) {
+        res.redirect("/")
+    }
 });

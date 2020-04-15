@@ -234,6 +234,7 @@ body > nav > div > ul.nav-tabs.nav-tabs > li.nav-item > a.active {
     display: inline-block;
     float: left;
     margin-right: 40px;
+    width: 100%;
 }
 
 .main-content .part-right {
@@ -503,8 +504,7 @@ body > nav > div > ul.nav-tabs.nav-tabs > li.nav-item > a.active {
 
 #questions-and-answers,
 .infographic {
-    max-width: 100%;
-    width: 780px;
+    max-width: 780px;
 }
 
 @media screen and (max-width: 850px) {
@@ -521,6 +521,7 @@ body > nav > div > ul.nav-tabs.nav-tabs > li.nav-item > a.active {
     font-size: 16px;
     line-height: 16px;
     font-family: Nunito-Sans;
+    width: 100%;
 }
 
 .main-content details summary {
